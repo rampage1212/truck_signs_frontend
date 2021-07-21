@@ -20,14 +20,17 @@ import axios from "axios";
 import router from "next/router";
 
 const Footer = () => {
-
   return (
     <footer className={styles.footer}>
-      <Row>
-        <Col xs={12} md={6} lg={4} className={styles.footerColCenter}>
-          <p>This is the footer</p>
-        </Col>
-      </Row>
+      <Container className={styles.footerWrapper}>
+      <p className={styles.p}>Copyright &copy; 2021 Signs for Trucks All Rights Reserved</p>
+      <Link href="/">
+        <a className={styles.footerLink}>Privacy Policy</a>
+      </Link>{" "}
+      <Link href="/">
+        <a className={styles.footerLink}>Terms</a>
+      </Link>{" "}
+      </Container>
     </footer>
   );
 };
