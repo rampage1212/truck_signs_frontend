@@ -1,0 +1,37 @@
+.logoGridContainer {
+  margin-top: 50px;
+}
+
+.logoCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoImage {
+  height: 250px;
+  width: 250px;
+  border: 1px solid black;
+  margin-top: 50px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.orderLogoButton {
+  width: 100px;
+  margin-top: 20px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  color: white;
+  background-color: #bf1e2d;
+  border-color: #bf1e2d;
+  border-radius: 0px;
+}
+
+.orderLogoButton:hover,
+.orderLogoButton:focus,
+.orderLogoButton:after {
+  color: white;
+  background-color: crimson;
+  border-color: crimson;
+  border-radius: 0px;
+}

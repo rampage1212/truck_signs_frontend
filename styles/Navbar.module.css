@@ -1,0 +1,15 @@
+.navbar{
+    background-color:white !important;
+    height:200px !important;
+}
+
+.brand, .linkItem{
+    color:black !important;
+
+}
+
+.linkItem{
+    padding-left:50px !important;
+    padding-right:50px !important;
+    align-self: center;
+}

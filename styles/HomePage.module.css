@@ -1,0 +1,146 @@
+.container {
+  width: 100%;
+}
+
+.truckImage {
+  height: 500px;
+  width: 100%;
+}
+
+.bannerContainer {
+  background-color: #bf1e2d;
+  width: 100vw !important;
+  height: 60px !important;
+  text-align: center !important;
+}
+
+.banner {
+  margin: auto;
+  padding: 10px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  align-self: center;
+}
+
+.uploadLogoContainer {
+  background-color: black;
+  color: white;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.uploadLogoHeader {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.uploadLogoPBold,
+.uploadLogoP {
+  margin: 0px;
+  font-size: 14px;
+}
+
+.uploadLogoPBold {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.uploadButton {
+  background-color: #bf1e2d;
+  color: white;
+  border-color: #bf1e2d;
+  border-radius: 0px;
+  width: max-content;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.uploadButton:hover,
+.uploadButton:focus,
+.uploadButton:after {
+  background-color: crimson;
+  color: white;
+  border-color: crimson;
+  border-radius: 0px;
+  width: max-content;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cardRow {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.cardCol {
+  padding-bottom: 50px;
+}
+
+.card {
+  background-color: white;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.cardIcon {
+  height: 30px;
+  width: 30px;
+}
+
+.cardHeader {
+  background-color: white;
+  text-align: center;
+  color: #bf1e2d;
+  font-size: 20px;
+  border-color: white;
+}
+
+.cardBody {
+  color: black;
+}
+
+.cardTitle {
+  color: #1b75bc;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.testimonialsContainer {
+  text-align: center;
+  color: black;
+}
+
+.testimonialsHeader {
+  color: #bf1e2d;
+  padding-top: 50px;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.testimonialsP {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.testimonialsWrapper{
+    text-align: center;
+    margin-top:30px;
+}
+
+.testimonialsImg {
+  height: 300px;
+  width: 400px;
+}
+
+.testimonialsFooter{
+    background-color: black;
+    color:white;
+    height:30px;
+    width: 400px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
