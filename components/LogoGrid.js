@@ -44,7 +44,11 @@ const LogoGrid = () => {
               className={styles.logoCol}
             >
               <img src={log.image} className={styles.logoImage}></img>
-              <Button size='sm' className={styles.orderLogoButton}>ORDER NOW</Button>
+              <Link href={`/product/${log.id}/`}>
+                <Button size="sm" className={styles.orderLogoButton}>
+                  ORDER NOW
+                </Button>
+              </Link>
             </Col>
           );
         })}
