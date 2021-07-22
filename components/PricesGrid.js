@@ -41,14 +41,18 @@ const PricesGrid = () => {
               sm={12}
               md={6}
               lg={6}
-              className={styles.logoCol}
+              className={styles.productCol}
             >
-              <img src={prod.image} className={styles.productImage}></img>
-              <Link href={`/product/${prod.id}/`}>
-                <Button size="sm" className={styles.orderProductButton}>
-                  ORDER NOW
-                </Button>
-              </Link>
+                <Link href={`/product/${prod.id}/`}>
+              <div className={styles.productWrapper}>
+                <img src={prod.image} className={styles.productImage}></img>
+                <div className={styles.crimsonSpanContainer}>
+                  <span className={styles.crimsonSpan}>{prod.title}</span>
+                  <span className={styles.crimsonSpanPrice}>${parseFloat(prod.base_price).toFixed(2)}</span>
+                </div>
+                <p className={styles.p}>{prod.width}'' x {prod.height}''</p>
+              </div>
+                </Link>
             </Col>
           );
         })}
@@ -66,7 +70,7 @@ const getProducts = (setProducts) => {
     },
   };
 
-  const products_url = domain + "truck-signs/products/";
+  const products_url = domain + "truck-signs/categories/";
   axios
     .get(products_url, config)
     .then(async (res) => {

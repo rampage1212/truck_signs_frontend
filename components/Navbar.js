@@ -67,7 +67,7 @@ const NextNavbar = () => {
 
               </Image>
             </Navbar.Brand>
-            <Nav.Link className={styles.linkItem} href="#features">
+            <Nav.Link className={styles.linkItem} href="/prices">
               PRICES
             </Nav.Link>
             <Nav.Link className={styles.linkItem} href="#pricing">

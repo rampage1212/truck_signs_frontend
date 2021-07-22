@@ -1,0 +1,58 @@
+.productGridContainer{
+    margin-bottom: 100px;
+}
+
+.productCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.productWrapper {
+  margin-top: 50px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.productImage {
+  border: 1px solid black;
+  height: 300px;
+  width: 500px;
+}
+
+.crimsonSpanContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.crimsonSpan {
+  color: #bf1e2d;
+  font-size: 24px;
+}
+
+.crimsonSpanPrice {
+  color: #bf1e2d;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.p{
+    margin:0px;
+    padding:0px;
+}
+
+@media screen and (max-width: 758px) {
+  .productWrapper {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 350px;
+  }
+
+  .productImage {
+    height: 200px;
+    width: 350px;
+  }
+}
