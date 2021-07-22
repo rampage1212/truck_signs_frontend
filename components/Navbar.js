@@ -32,10 +32,12 @@ const NextNavbar = () => {
     >
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Brand
+
+        <Navbar.Brand
               className={`navbar-brand d-lg-none ${styles.smallBrand}`}
               href="/"
             >
+              {/* Truck Sings */}
               <Image 
                 src={truckLogo}
                 alt="Logo not available"
@@ -45,8 +47,10 @@ const NextNavbar = () => {
 
               </Image>
             </Navbar.Brand>
+           
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="m-auto">
+          <Nav className={styles.navbar_nav} className="m-auto">
+          
             <Nav.Link className={styles.linkItem} href="#features">
               HOW TO
             </Nav.Link>
