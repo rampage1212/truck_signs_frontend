@@ -43,7 +43,7 @@ const PricesGrid = () => {
               lg={6}
               className={styles.productCol}
             >
-                <Link href={`/product/${prod.id}/`}>
+                <Link href={`/product/${prod.sample_product_id}/`}>
               <div className={styles.productWrapper}>
                 <img src={prod.image} className={styles.productImage}></img>
                 <div className={styles.crimsonSpanContainer}>

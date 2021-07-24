@@ -54,10 +54,10 @@ const NextNavbar = () => {
             <Nav.Link className={styles.linkItem} href="#features">
               HOW TO
             </Nav.Link>
-            <Nav.Link className={styles.linkItem} href="#pricing">
+            <Nav.Link className={styles.linkItem} href="/">
               GET A SIGN
             </Nav.Link>
-            <Navbar.Brand className={`d-none d-lg-block ${styles.brand}`}  href="#home">
+            <Navbar.Brand className={`d-none d-lg-block ${styles.brand}`}  href="/">
               <Image 
                 src={truckLogo}
                 alt="Logo not available"

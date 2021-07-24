@@ -1,0 +1,27 @@
+.productImageColWrapper{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: min(500px, 90vw);
+}
+
+.productImageDiv{
+    height: min(500px, 90vw);
+    width: min(500px, 90vw);
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align:center;
+}
+
+.productImage{
+    height:100%;
+    width: 100%;
+}
+
+.dropdownColor{
+    width:100%;
+}
+
+.dropdownItemColor{
+    height:100%;
+    width:100%;
+}

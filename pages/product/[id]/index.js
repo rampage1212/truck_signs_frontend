@@ -15,6 +15,7 @@ export default function ProductDetail() {
   const router = useRouter();
   const { id } = router.query;
   const [product, setProduct] = useState(null);
+  const [variations, setVariations] = useState(null);
   const [arr, setArr] = useState(null);
 
   // NOTE Init
@@ -34,6 +35,8 @@ export default function ProductDetail() {
       product_id,
       setProduct,
     );
+
+    await getVariations(setVariations)
 
     // LINK Array for amount of product this is a fix for bug
     var temp_arr = Array(100).fill(1);
@@ -56,7 +59,7 @@ export default function ProductDetail() {
       </Head>
 
       <main className={styles.main}>
-       <ProductDetailComponent product={product}/>
+       <ProductDetailComponent product={product} variations={variations}/>
       </main>
     </div>
   );
@@ -81,6 +84,28 @@ const getProduct = async (
     .then(async (res) => {
       const product = await res.data
       setProduct(product);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+const getVariations = async (
+  setVariations
+) => {
+
+    const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+  const variations_url = domain + `truck-signs/lettering-item-categories/`;
+  axios
+    .get(variations_url, config)
+    .then(async (res) => {
+      const product = await res.data
+      setVariations(product);
     })
     .catch((error) => {
       console.log(error);
