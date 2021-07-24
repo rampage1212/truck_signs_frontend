@@ -16,6 +16,7 @@ import {
   ControlLabel,
   Dropdown,
   FormLabel,
+  ListGroup,
 } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -36,11 +37,17 @@ const ProductDetailComponent = ({ product, variations }) => {
     setColor(product.product_color_default);
 
     const var_id = window.localStorage.getItem("product_variation_id");
-    const product_id = window.localStorage.getItem("latest_customized_product_id");
-    if (var_id != undefined && var_id != null && product_id != undefined && product_id != null) {
+    const product_id = window.localStorage.getItem(
+      "latest_customized_product_id"
+    );
+    if (
+      var_id != undefined &&
+      var_id != null &&
+      product_id != undefined &&
+      product_id != null
+    ) {
       try {
-        if(product.id == product_id){
-
+        if (product.id == product_id) {
           getCustomVars(var_id, setCustomVars);
         }
       } catch {}
@@ -51,7 +58,7 @@ const ProductDetailComponent = ({ product, variations }) => {
     await addLine(product.id, dummy_var, lettering_variation_category_id);
   };
 
-  return product == null || colors == null ? (
+  return product == null || colors == null || color == null ? (
     <div></div>
   ) : (
     <Container className={styles.productGrid}>
@@ -76,37 +83,43 @@ const ProductDetailComponent = ({ product, variations }) => {
               <div></div>
             ) : (
               <FormGroup>
-                <FormLabel>Color</FormLabel>
-                <Dropdown>
-                  <Dropdown.Toggle
-                    style={{
-                      backgroundColor: color.color_in_hex,
-                      borderColor: color.color_in_hex,
-                    }}
-                    id="dropdown-basic"
-                    className={styles.dropdownColor}
-                  ></Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {colors.map((col, index) => {
-                      const color_in_hex = col.color_in_hex;
-                      return (
-                        <Dropdown.Item
-                          className={styles.dropdownItemColor}
-                          style={{
-                            backgroundColor: color_in_hex,
-                            color: color_in_hex,
-                          }}
-                          key={index}
-                          onSelect={(e) => {
-                            setColor(col);
-                          }}
-                        >
-                          {col.color_nickname}
-                        </Dropdown.Item>
-                      );
-                    })}
-                  </Dropdown.Menu>
-                </Dropdown>
+                <div className={styles.colorFormWrapper}>
+                  <div
+                    className={styles.colorBox}
+                    style={{ backgroundColor: color.color_in_hex }}
+                  ></div>
+                  <div className={styles.dropdownDiv}>
+                    <Dropdown className={styles.colorDropdown}>
+                      <Dropdown.Toggle
+                        variant="outline-primary"
+                        id="dropdown-basic"
+                        className={styles.dropdownColorToggle}
+                      >
+                        Color
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        {colors.map((col, index) => {
+                          const color_in_hex = col.color_in_hex;
+                          return (
+                            <Dropdown.Item
+                              className={styles.dropdownItemColor}
+                              style={{
+                                backgroundColor: color_in_hex,
+                                color: color_in_hex,
+                              }}
+                              key={index}
+                              onSelect={(e) => {
+                                setColor(col);
+                              }}
+                            >
+                              {col.color_nickname}
+                            </Dropdown.Item>
+                          );
+                        })}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </div>
+                </div>
               </FormGroup>
             )}
             {custom_vars == null ? (
@@ -114,7 +127,23 @@ const ProductDetailComponent = ({ product, variations }) => {
             ) : (
               <>
                 {custom_vars.map((cv, index) => {
-                  return <div key={index}>{cv.lettering}</div>;
+                  return (
+                    <ListGroup className={styles.colorFormWrapper}>
+                      <div className={styles.colorBox}></div>
+                      {/* <div className={styles.listGroupItem}> */}
+                        <ListGroup horizontal className={styles.listGroupItem}>
+                          <ListGroup.Item className={styles.spanListGroupItem}>
+                            <span className={styles.crimsonSpan}>
+                              {cv.lettering_item_category.title}:
+                            </span>{" "}
+                          </ListGroup.Item>
+                          <ListGroup.Item className={styles.pListGroupItem}>
+                            <p className={styles.variationsP}>{cv.lettering}</p>
+                          </ListGroup.Item>
+                        </ListGroup>
+                      {/* </div> */}
+                    </ListGroup>
+                  );
                 })}
               </>
             )}
@@ -213,10 +242,10 @@ const addLine = async (id, variation, lettering_variation_category_id) => {
     .post(lettering_var_create_url, body, config)
     .then(async (res) => {
       const result = await res.data["Result"];
-      console.log(result)
+      console.log(result);
       window.localStorage.setItem("product_variation_id", result.id);
       window.localStorage.setItem("latest_customized_product_id", id);
-      router.reload()
+      router.reload();
     })
     .catch((error) => {
       console.log(error);

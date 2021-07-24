@@ -1,27 +1,92 @@
-.productImageColWrapper{
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: min(500px, 90vw);
+.productImageColWrapper {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: min(500px, 90vw);
 }
 
-.productImageDiv{
-    height: min(500px, 90vw);
-    width: min(500px, 90vw);
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align:center;
+.productImageDiv {
+  height: min(500px, 90vw);
+  width: min(500px, 90vw);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
 }
 
-.productImage{
-    height:100%;
-    width: 100%;
+.productImage {
+  height: 100%;
+  width: 100%;
 }
 
-.dropdownColor{
-    width:100%;
+.colorFormWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
 }
 
-.dropdownItemColor{
-    height:100%;
-    width:100%;
+.colorBox {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  margin: 6px;
+}
+
+.dropdownDiv {
+  width: 100%;
+  margin: 6px;
+}
+
+
+.dropdownColorToggle {
+  height: 40px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  text-align: start;
+  font-size: 20px;
+  border-radius: 0px !important;
+}
+
+.dropdownColorToggle:focus {
+  background-color: white;
+  color: black;
+}
+.dropdownColorToggle:hover {
+  background-color: white;
+  color:Col black;
+}
+
+.dropdownItemColor {
+  height: 100%;
+  width: 100%;
+}
+
+
+.listGroupItem {
+  width: 100%;
+  margin: 6px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  text-align: start;
+  font-size: 20px;
+  border-radius: 0px !important;
+}
+
+.spanListGroupItem{
+    background-color:#bf1e2d;
+    border-radius: 0px !important;
+    border:0px;
+    border-right: 1px solid black;
+}
+
+.crimsonSpan{
+    color: white;
+}
+
+.pListGroupItem{
+    border-radius: 0px !important;
+    border:0px;
 }
