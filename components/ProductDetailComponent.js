@@ -36,9 +36,13 @@ const ProductDetailComponent = ({ product, variations }) => {
     setColor(product.product_color_default);
 
     const var_id = window.localStorage.getItem("product_variation_id");
-    if (var_id != undefined && var_id != null) {
+    const product_id = window.localStorage.getItem("latest_customized_product_id");
+    if (var_id != undefined && var_id != null && product_id != undefined && product_id != null) {
       try {
-        getCustomVars(var_id, setCustomVars);
+        if(product.id == product_id){
+
+          getCustomVars(var_id, setCustomVars);
+        }
       } catch {}
     }
   }, []);
@@ -211,6 +215,7 @@ const addLine = async (id, variation, lettering_variation_category_id) => {
       const result = await res.data["Result"];
       console.log(result)
       window.localStorage.setItem("product_variation_id", result.id);
+      window.localStorage.setItem("latest_customized_product_id", id);
       router.reload()
     })
     .catch((error) => {
