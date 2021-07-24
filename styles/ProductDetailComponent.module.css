@@ -36,7 +36,6 @@
   margin: 6px;
 }
 
-
 .dropdownColorToggle {
   height: 40px;
   width: 100%;
@@ -54,14 +53,13 @@
 }
 .dropdownColorToggle:hover {
   background-color: white;
-  color:Col black;
+  color: Col black;
 }
 
 .dropdownItemColor {
   height: 100%;
   width: 100%;
 }
-
 
 .listGroupItem {
   width: 100%;
@@ -75,18 +73,45 @@
   border-radius: 0px !important;
 }
 
-.spanListGroupItem{
-    background-color:#bf1e2d;
-    border-radius: 0px !important;
-    border:0px;
-    border-right: 1px solid black;
+.deleteBox {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  margin: 6px;
 }
 
-.crimsonSpan{
-    color: white;
+.deleteBox .xTimesIcon {
+  display: none;
 }
 
-.pListGroupItem{
-    border-radius: 0px !important;
-    border:0px;
+.deleteBox:hover .xTimesIcon {
+  display: inline-block;
+}
+
+.xTimesIconBox {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  height: min-content;
+  width: min-content;
+}
+
+.xTimesIcon {
+  color: #bf1e2d;
+  margin-top:3px;
+}
+
+.spanListGroupItem {
+  background-color: #bf1e2d;
+  border-radius: 0px !important;
+  border: 0px;
+  border-right: 1px solid black;
+}
+
+.crimsonSpan {
+  color: white;
+}
+
+.pListGroupItem {
+  border-radius: 0px !important;
+  border: 0px;
 }

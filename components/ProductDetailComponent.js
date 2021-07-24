@@ -17,10 +17,13 @@ import {
   Dropdown,
   FormLabel,
   ListGroup,
+  Icon,
 } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import router from "next/router";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const domain = "http://127.0.0.1:8000/";
 
@@ -56,6 +59,10 @@ const ProductDetailComponent = ({ product, variations }) => {
 
   const addLineHandler = async (e) => {
     await addLine(product.id, dummy_var, lettering_variation_category_id);
+  };
+
+  const deleteLetteringVariationHandler = async (lettering_id) => {
+    await deleteLetteringVariation(lettering_id);
   };
 
   return product == null || colors == null || color == null ? (
@@ -128,73 +135,89 @@ const ProductDetailComponent = ({ product, variations }) => {
               <>
                 {custom_vars.map((cv, index) => {
                   return (
-                    <ListGroup className={styles.colorFormWrapper}>
-                      <div className={styles.colorBox}></div>
-                      {/* <div className={styles.listGroupItem}> */}
-                        <ListGroup horizontal className={styles.listGroupItem}>
-                          <ListGroup.Item className={styles.spanListGroupItem}>
-                            <span className={styles.crimsonSpan}>
-                              {cv.lettering_item_category.title}:
-                            </span>{" "}
-                          </ListGroup.Item>
-                          <ListGroup.Item className={styles.pListGroupItem}>
-                            <p className={styles.variationsP}>{cv.lettering}</p>
-                          </ListGroup.Item>
-                        </ListGroup>
-                      {/* </div> */}
+                    <ListGroup key={index} className={styles.colorFormWrapper}>
+                      <div className={styles.deleteBox}>
+                        <div
+                          onClick={(e) =>
+                            deleteLetteringVariationHandler(cv.id)
+                          }
+                          className={styles.xTimesIconBox}
+                        >
+                          <FontAwesomeIcon
+                            className={styles.xTimesIcon}
+                            size="2x"
+                            icon={faTimes}
+                          />
+                        </div>
+                      </div>
+                      <ListGroup horizontal className={styles.listGroupItem}>
+                        <ListGroup.Item className={styles.spanListGroupItem}>
+                          <span className={styles.crimsonSpan}>
+                            {cv.lettering_item_category.title}:
+                          </span>{" "}
+                        </ListGroup.Item>
+                        <ListGroup.Item className={styles.pListGroupItem}>
+                          <p className={styles.variationsP}>{cv.lettering}</p>
+                        </ListGroup.Item>
+                      </ListGroup>
                     </ListGroup>
                   );
                 })}
               </>
             )}
 
-            <InputGroup className={styles.inputGroup}>
-              <FormControl
-                as="select"
-                placeholder="Search"
-                className={`mr-2 ${styles.categoryDropdown}`}
-                aria-label="Search"
-                onChange={(e) =>
-                  setLetteringCategoryIdHandler(
-                    e.target.value,
-                    variations,
-                    setLetteringCategoryId
-                  )
-                }
-              >
-                <option value={-1}>Add type</option>
-                {variations != null ? (
-                  variations.map((variation, index) => {
-                    return (
-                      <option value={index} key={index + 2}>
-                        {variation.title}
-                      </option>
-                    );
-                  })
-                ) : (
-                  <>
-                    {" "}
-                    <option>No categories</option>
-                  </>
-                )}
-              </FormControl>
+            {custom_vars!= null && custom_vars.length <
+            product.category.max_amount_of_lettering_items ? (
+              <InputGroup className={styles.inputGroup}>
+                <FormControl
+                  as="select"
+                  placeholder="Search"
+                  className={`mr-2 ${styles.categoryDropdown}`}
+                  aria-label="Search"
+                  onChange={(e) =>
+                    setLetteringCategoryIdHandler(
+                      e.target.value,
+                      variations,
+                      setLetteringCategoryId
+                    )
+                  }
+                >
+                  <option value={-1}>Add type</option>
+                  {variations != null ? (
+                    variations.map((variation, index) => {
+                      return (
+                        <option value={index} key={index + 2}>
+                          {variation.title}
+                        </option>
+                      );
+                    })
+                  ) : (
+                    <>
+                      {" "}
+                      <option>No categories</option>
+                    </>
+                  )}
+                </FormControl>
 
-              <FormControl
-                type="search"
-                placeholder="Search"
-                className="mr-2"
-                aria-label="Search"
-                onChange={(e) => setDummyVar(e.target.value)}
-              />
-              <Button
-                className={styles.searchButton}
-                onClick={(e) => {
-                  addLineHandler(e);
-                }}
-              >
-                Add Line
-              </Button>
-            </InputGroup>
+                <FormControl
+                  type="search"
+                  placeholder="Search"
+                  className="mr-2"
+                  aria-label="Search"
+                  onChange={(e) => setDummyVar(e.target.value)}
+                />
+                <Button
+                  className={styles.searchButton}
+                  onClick={(e) => {
+                    addLineHandler(e);
+                  }}
+                >
+                  Add Line
+                </Button>
+              </InputGroup>
+            ) : (
+              <div></div>
+            )}
           </Form>
         </Col>
       </Row>
@@ -204,6 +227,9 @@ const ProductDetailComponent = ({ product, variations }) => {
 
 export default ProductDetailComponent;
 
+// NOTE helpers
+
+// LINK
 const getColors = (setColors) => {
   const config = {
     headers: {
@@ -218,6 +244,7 @@ const getColors = (setColors) => {
   });
 };
 
+// LINK
 const addLine = async (id, variation, lettering_variation_category_id) => {
   const config = {
     headers: {
@@ -252,6 +279,7 @@ const addLine = async (id, variation, lettering_variation_category_id) => {
     });
 };
 
+// LINK
 const getCustomVars = (id, setCustomVars) => {
   const config = {
     headers: {
@@ -272,6 +300,7 @@ const getCustomVars = (id, setCustomVars) => {
     });
 };
 
+// LINK
 const setLetteringCategoryIdHandler = (
   value,
   variations,
@@ -282,4 +311,25 @@ const setLetteringCategoryIdHandler = (
   } catch {
     setLetteringCategoryId(-1);
   }
+};
+
+// LINK
+const deleteLetteringVariation = async (lettering_var_id) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  const lettering_var_url =
+    domain + `truck-signs/product-lettering/${lettering_var_id}/delete/`;
+  axios
+    .delete(lettering_var_url, config)
+    .then(async (res) => {
+      const result = await res.data;
+      router.reload();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
