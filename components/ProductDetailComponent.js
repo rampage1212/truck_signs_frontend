@@ -34,10 +34,14 @@ const ProductDetailComponent = ({ product, variations }) => {
   const [dummy_var, setDummyVar] = useState(null);
   const [lettering_variation_category_id, setLetteringCategoryId] =
     useState(null);
+  const [email, setEmail] = useState("");
+  const [comment, setComment] = useState("");
+  const [amount, setAmount] = useState(1);
 
   useEffect(async () => {
     getColors(setColors);
     setColor(product.product_color_default);
+    setAmount(1)
 
     const var_id = window.localStorage.getItem("product_variation_id");
     const product_id = window.localStorage.getItem(
@@ -63,6 +67,10 @@ const ProductDetailComponent = ({ product, variations }) => {
 
   const deleteLetteringVariationHandler = async (lettering_id) => {
     await deleteLetteringVariation(lettering_id);
+  };
+
+  const createOrderHandler = async () => {
+    await createOrder(color.id, amount, email, comment);
   };
 
   return product == null || colors == null || color == null ? (
@@ -166,9 +174,11 @@ const ProductDetailComponent = ({ product, variations }) => {
               </>
             )}
 
-            {custom_vars!= null && custom_vars.length <
-            product.category.max_amount_of_lettering_items ? (
+            {custom_vars != null &&
+            custom_vars.length <
+              product.category.max_amount_of_lettering_items ? (
               <InputGroup className={styles.inputGroup}>
+                <div className={styles.dummyDeleteBox}></div>
                 <FormControl
                   as="select"
                   placeholder="Search"
@@ -182,7 +192,7 @@ const ProductDetailComponent = ({ product, variations }) => {
                     )
                   }
                 >
-                  <option value={-1}>Add type</option>
+                  <option value={-1}>Add Type</option>
                   {variations != null ? (
                     variations.map((variation, index) => {
                       return (
@@ -201,8 +211,8 @@ const ProductDetailComponent = ({ product, variations }) => {
 
                 <FormControl
                   type="search"
-                  placeholder="Search"
-                  className="mr-2"
+                  placeholder="Line of lettering ... "
+                  className={`mr-2 ${styles.categoryAddLettering}`}
                   aria-label="Search"
                   onChange={(e) => setDummyVar(e.target.value)}
                 />
@@ -218,6 +228,43 @@ const ProductDetailComponent = ({ product, variations }) => {
             ) : (
               <div></div>
             )}
+          </Form>
+          <Form className={styles.orderInfoForm}>
+            <InputGroup className={styles.formGroup}>
+              {/* <Form.Label className={styles.formLabel}>Comment</Form.Label> */}
+              <div className={styles.dummyDeleteBox}></div>
+              <FormControl
+                className={`${styles.formControl} ${styles.commentFormControl}`}
+                autoFocus
+                as="textarea"
+                placeholder="Comments ..."
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+              ></FormControl>
+            </InputGroup>
+
+            <InputGroup className={styles.formGroup}>
+              {/* <Form.Label className={styles.formLabel}>Email</Form.Label> */}
+              <div className={styles.dummyDeleteBox}></div>
+              <FormControl
+                className={styles.formControl}
+                autoFocus
+                placeholder="Email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></FormControl>
+            </InputGroup>
+            <div className={styles.orderNowButtonDiv}>
+              <Button
+                onClick={(e) => {
+                  createOrderHandler();
+                }}
+                className={styles.orderNowButton}
+              >
+                ORDER NOW
+              </Button>
+            </div>
           </Form>
         </Col>
       </Row>
@@ -328,6 +375,37 @@ const deleteLetteringVariation = async (lettering_var_id) => {
     .then(async (res) => {
       const result = await res.data;
       router.reload();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+// LINK
+const createOrder = async (product_color_id, amount, email, comment) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  const id = window.localStorage.getItem("product_variation_id");
+
+  const body = JSON.stringify({
+    product_color_id,
+    amount,
+    order: {
+      user_email: email,
+      comment,
+    },
+  });
+
+  const create_order_url = domain + `truck-signs/order/${id}/create/`;
+  axios
+    .post(create_order_url, body, config)
+    .then(async (res) => {
+      const result = await res.data["Result"];
+      router.push(`/order/${result.id}`);
     })
     .catch((error) => {
       console.log(error);
