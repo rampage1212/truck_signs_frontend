@@ -1,0 +1,19 @@
+.videoDiv {
+    width: 80%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.video{
+    width: 100%;
+}
+
+.infoDiv {
+  width: 80%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.header {
+  font-size: 24px;
+}

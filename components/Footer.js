@@ -21,7 +21,7 @@ import router from "next/router";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer id='footer' className={styles.footer}>
       <Container className={styles.footerWrapper}>
       <p className={styles.p}>Copyright &copy; 2021 Signs for Trucks All Rights Reserved</p>
       <Link href="/">

@@ -174,7 +174,7 @@ const ProductDetailComponent = ({ product, variations }) => {
               </>
             )}
 
-            {custom_vars != null &&
+            {custom_vars == null ||
             custom_vars.length <
               product.category.max_amount_of_lettering_items ? (
               <InputGroup className={styles.inputGroup}>
@@ -405,6 +405,8 @@ const createOrder = async (product_color_id, amount, email, comment) => {
     .post(create_order_url, body, config)
     .then(async (res) => {
       const result = await res.data["Result"];
+      window.localStorage.removeItem("latest_customized_product_id")
+      window.localStorage.removeItem("product_variation_id")
       router.push(`/order/${result.id}`);
     })
     .catch((error) => {

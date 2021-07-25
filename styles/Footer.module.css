@@ -3,8 +3,10 @@
     color:white;
     text-align: center;
     margin-top:50px;
-    height: max(50px, fit-content)
-
+    height: 100px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
 }
 
 .footerWrapper{

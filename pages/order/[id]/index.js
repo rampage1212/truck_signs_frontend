@@ -3,15 +3,14 @@ import Image from "next/image";
 import styles from "../../../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProductDetailComponent from "../../../components/ProductDetailComponent"
+import ProductDetailComponent from "../../../components/ProductDetailComponent";
 import router from "next/router";
 import { useRouter } from "next/router";
-
+import PaymentForm from "../../../components/PaymentForm";
 
 const domain = "http://127.0.0.1:8000/";
 
-
-export default function ProductDetail() {
+export default function OrderDetail() {
   const router = useRouter();
   const { id } = router.query;
   const [order, setOrder] = useState(null);
@@ -19,7 +18,6 @@ export default function ProductDetail() {
   // NOTE Init
   useEffect(async () => {
     // LINK product variation details
-
 
     var order_id = null;
     if (id != undefined && id != null) {
@@ -29,18 +27,11 @@ export default function ProductDetail() {
       order_id = window.localStorage.getItem("order_id");
     }
 
-    await getOrder(
-      order_id,
-      setOrder,
-    );
-
+    await getOrder(order_id, setOrder);
   }, []);
 
-
-
-
   // NOTE Components
- console.log(order)
+  console.log(order);
   return order == undefined || order == null ? (
     <div></div>
   ) : (
@@ -52,7 +43,7 @@ export default function ProductDetail() {
       </Head>
 
       <main className={styles.main}>
-
+        <PaymentForm order={order} />
       </main>
     </div>
   );
@@ -60,22 +51,18 @@ export default function ProductDetail() {
 
 // NOTE Helpers
 
-const getOrder = async (
-  id,
-  setOrder
-) => {
-
-    const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
+const getOrder = async (id, setOrder) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
 
   const order_url = domain + `truck-signs/order/${id}/retrieve/`;
   axios
     .get(order_url, config)
     .then(async (res) => {
-      const product = await res.data
+      const product = await res.data;
       setOrder(product);
     })
     .catch((error) => {

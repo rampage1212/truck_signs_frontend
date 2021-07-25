@@ -51,7 +51,7 @@ const NextNavbar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className={styles.navbar_nav} className="m-auto">
           
-            <Nav.Link className={styles.linkItem} href="#features">
+            <Nav.Link className={styles.linkItem} href="/how-to">
               HOW TO
             </Nav.Link>
             <Nav.Link className={styles.linkItem} href="/">
@@ -70,7 +70,7 @@ const NextNavbar = () => {
             <Nav.Link className={styles.linkItem} href="/prices">
               PRICES
             </Nav.Link>
-            <Nav.Link className={styles.linkItem} href="#pricing">
+            <Nav.Link className={styles.linkItem} href="#footer">
               CONTACT US
             </Nav.Link>
           </Nav>
