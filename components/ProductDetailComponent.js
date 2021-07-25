@@ -70,10 +70,11 @@ const ProductDetailComponent = ({ product, variations }) => {
   };
 
   const createOrderHandler = async () => {
-    await createOrder(color.id, amount, email, comment);
+    const color_id = (color==null)? -1: color.id;
+    await createOrder(color_id, amount, email, comment);
   };
 
-  return product == null || colors == null || color == null ? (
+  return product == null || colors == null? (
     <div></div>
   ) : (
     <Container className={styles.productGrid}>

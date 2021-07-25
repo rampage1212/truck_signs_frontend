@@ -1,9 +1,41 @@
+@font-face {
+  font-family: "Athena";
+  src: url("/fonts/Athena/Athena.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bench-Nine";
+  src: url("/fonts/Bench Nine/BenchNine-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bench-Nine";
+  src: url("/fonts/Bench Nine/BenchNine-Light.ttf");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bench-Nine";
+  src: url("/fonts/Bench Nine/BenchNine-Bold.ttf");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Athena, Bench-Nine;
 }
 
 a {
@@ -14,3 +46,4 @@ a {
 * {
   box-sizing: border-box;
 }
+

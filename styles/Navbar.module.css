@@ -1,6 +1,7 @@
 .navbar{
     background-color:white !important;
-    height:200px !important;
+    height:fit-content;
+    font-family: Bench-Nine;
 }
 
 .brand, .linkItem{
@@ -12,4 +13,11 @@
     padding-left:50px !important;
     padding-right:50px !important;
     align-self: center;
+    border-bottom:0px solid royalblue;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.linkItem:hover{
+    border-bottom:5px solid royalblue;
 }

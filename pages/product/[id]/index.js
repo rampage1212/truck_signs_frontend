@@ -47,7 +47,6 @@ export default function ProductDetail() {
 
 
   // NOTE Components
- 
   return product == undefined || product == null ? (
     <div></div>
   ) : (

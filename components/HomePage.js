@@ -19,6 +19,7 @@ import {
   Row,
   ControlLabel,
   Card,
+  FormLabel,
 } from "react-bootstrap";
 import LogoGrid from "./LogoGrid";
 import { useState, useEffect } from "react";
@@ -33,6 +34,10 @@ const HomePage = () => {
   useEffect(async () => {
     await getTestimonials(setTestimonials);
   }, []);
+
+  const imageUploadHandler = async (image) => {
+    await imageUpload(image);
+  };
 
   return (
     <>
@@ -54,9 +59,24 @@ const HomePage = () => {
           Just make sure to upload the correct file, PDF or AI are very well
           welcome!
         </p>
-        <Button size="sm" className={styles.uploadButton}>
+        {/* <Button size="sm" className={styles.uploadButton}>
           UPLOAD NOW
-        </Button>
+        </Button> */}
+        {/* NOTE Upload file */}
+
+        <label for="uploadFileInput">
+          <Button size="sm" className={styles.uploadButton}>
+            UPLOAD NOW
+          </Button>
+        </label>
+        <input
+          id="uploadFileInput"
+          type="file"
+          style={{ display: "none" }}
+          accept="image/png, image/jpeg"
+          onChange={(e) => imageUploadHandler(e.target.files[0])}
+        />
+
         <Row className={styles.cardRow}>
           <Col className={styles.cardCol} xs={12} sm={12} md={4} lg={4}>
             <Card className={styles.card}>
@@ -139,9 +159,10 @@ const HomePage = () => {
         <></>
       ) : (
         <Row className={styles.testimonialsRow}>
-        {testimonials.map((tes, index) => {
-          return (
+          {testimonials.map((tes, index) => {
+            return (
               <Col
+                key={index}
                 xs={12}
                 sm={12}
                 md={6}
@@ -155,8 +176,8 @@ const HomePage = () => {
                   </div>
                 </Container>
               </Col>
-          );
-        })}
+            );
+          })}
         </Row>
       )}
     </>
@@ -182,4 +203,26 @@ const getTestimonials = (setTestimonials) => {
     .catch((error) => {
       console.log(error);
     });
+};
+
+const imageUpload = async (image) => {
+  const data = new FormData();
+
+  data.append("image", image);
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  const upload_image_url = domain + "truck-signs/upload-customer-image/";
+
+  axios
+    .post(upload_image_url, data, config)
+    .then(async (res) => {
+      const result = await res.data["Result"];
+      router.push(`/product/${result.id}/`);
+    })
+    .catch((error) => console.log(error));
 };

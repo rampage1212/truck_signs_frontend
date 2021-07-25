@@ -34,38 +34,36 @@ const NextNavbar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Brand
-              className={`navbar-brand d-lg-none ${styles.smallBrand}`}
-              href="/"
-            >
-              {/* Truck Sings */}
-              <Image 
-                src={truckLogo}
-                alt="Logo not available"
-                height="150px"
-                width="200px"
-              >
+          className={`navbar-brand d-lg-none ${styles.smallBrand}`}
+          href="/"
+        >
+          {/* Truck Sings */}
+          <Image
+            src={truckLogo}
+            alt="Logo not available"
+            height="150px"
+            width="200px"
+          ></Image>
+        </Navbar.Brand>
 
-              </Image>
-            </Navbar.Brand>
-           
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className={styles.navbar_nav} className="m-auto">
-          
             <Nav.Link className={styles.linkItem} href="/how-to">
               HOW TO
             </Nav.Link>
             <Nav.Link className={styles.linkItem} href="/">
               GET A SIGN
             </Nav.Link>
-            <Navbar.Brand className={`d-none d-lg-block ${styles.brand}`}  href="/">
-              <Image 
+            <Navbar.Brand
+              className={`d-none d-lg-block ${styles.brand}`}
+              href="/"
+            >
+              <Image
                 src={truckLogo}
                 alt="Logo not available"
                 height="150px"
                 width="200px"
-              >
-
-              </Image>
+              ></Image>
             </Navbar.Brand>
             <Nav.Link className={styles.linkItem} href="/prices">
               PRICES
