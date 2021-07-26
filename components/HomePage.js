@@ -64,15 +64,14 @@ const HomePage = () => {
         </Button> */}
         {/* NOTE Upload file */}
 
-        <label for="uploadFileInput">
-          <Button size="sm" className={styles.uploadButton}>
-            UPLOAD NOW
-          </Button>
+        <label for="uploadButton" className={styles.uploadButton}>
+          UPLOAD NOW
         </label>
+
         <input
-          id="uploadFileInput"
+          id="uploadButton"
           type="file"
-          style={{ display: "none" }}
+          hidden
           accept="image/png, image/jpeg"
           onChange={(e) => imageUploadHandler(e.target.files[0])}
         />

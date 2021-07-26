@@ -56,7 +56,9 @@
   color: white;
   border-color: #bf1e2d;
   border-radius: 0px;
-  width: max-content;
+  width: 130px;
+  height:30px;
+  padding-top: 3px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -68,7 +70,6 @@
   color: white;
   border-color: crimson;
   border-radius: 0px;
-  width: max-content;
   margin-top: 20px;
   margin-bottom: 20px;
 }
