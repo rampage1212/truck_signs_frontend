@@ -1,7 +1,8 @@
 .navbar{
     background-color:white !important;
     height:fit-content;
-    font-family: Bench-Nine;
+    /* font-family: Bench-Nine; */
+    font-family:Acumin;
 }
 
 .brand, .linkItem{

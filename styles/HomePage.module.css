@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  font-weight: 300 !important;
 }
 
 .truckImage {
@@ -29,11 +30,14 @@
   color: white;
   margin-top: 50px;
   text-align: center;
+  font-weight: 300 !important;
 }
 
 .uploadLogoHeader {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: Athena;
+  font-size: 60px;
 }
 
 .uploadLogoPBold,
@@ -72,10 +76,12 @@
 .cardRow {
   margin-left: 50px;
   margin-right: 50px;
+  font-weight: 300 !important;
 }
 
 .cardCol {
   padding-bottom: 50px;
+  font-weight: 300 !important;
 }
 
 .card {
@@ -83,6 +89,7 @@
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  font-weight: 300 !important;
 }
 
 .cardIcon {
@@ -100,9 +107,11 @@
 
 .cardBody {
   color: black;
+  font-weight: 300 !important;
 }
 
 .cardTitle {
+  font-weight: 300 !important;
   color: #1b75bc;
   font-size: 14px;
   margin-top: 10px;
@@ -113,6 +122,7 @@
 .testimonialsContainer {
   text-align: center;
   color: black;
+  font-weight: 300 !important;
 }
 
 .testimonialsHeader {
@@ -120,11 +130,14 @@
   padding-top: 50px;
   margin-bottom: 0px !important;
   padding-bottom: 0px !important;
+  font-family: Athena;
+  font-size: 60px;
 }
 
 .testimonialsP {
   margin: 0px !important;
   padding: 0px !important;
+  font-size: 20px;
 }
 
 .testimonialsWrapper {
@@ -140,6 +153,7 @@
 .testimonialsFooter {
   background-color: black;
   color: white;
+  font-weight: 300 !important;
   height: 30px;
   width: 400px;
   margin-left: auto !important;

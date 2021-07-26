@@ -12,8 +12,10 @@
   width: 80%;
   margin-left: auto !important;
   margin-right: auto !important;
+  font-weight: 300 !important;
 }
 
 .header {
   font-size: 24px;
+  font-weight: 300 !important;
 }

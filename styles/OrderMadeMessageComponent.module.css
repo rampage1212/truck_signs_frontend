@@ -1,26 +1,27 @@
-.emailCheckBox{
-    margin-left:auto !important;
-    margin-right:auto !important;
-    text-align:center !important;
-    margin-top: 50px;
-    border: 1px solid #bf1e2d;
-    height: 100px;
-    width: min(1000px, 90%);
+.emailCheckBox {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  margin-top: 50px;
+  border: 1px solid #bf1e2d;
+  height: 100px;
+  width: min(1000px, 90%);
+  font-weight: 300 !important;
 }
 
-.p{
-    font-size: 20px;
-   padding:10px;
+.p {
+  font-size: 20px;
+  padding: 10px;
 }
 
-.a{
-    color:#bf1e2d;
+.a {
+  color: #bf1e2d;
 }
 
 .a:hover,
 .a:focus,
 .a:active,
-.a:after{
-    color:crimson;
-    font-weight:bold;
+.a:after {
+  color: crimson;
+  font-weight: bold;
 }

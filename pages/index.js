@@ -35,6 +35,12 @@ export default function Home() {
           as="font"
           crossOrigin=""
         />
+        <link
+          rel="preload"
+          href="/fonts/Acumin/Acumin.ttf"
+          as="font"
+          crossOrigin=""
+        />
       </Head>
 
       <main>

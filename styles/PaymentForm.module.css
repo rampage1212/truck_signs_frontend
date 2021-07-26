@@ -2,6 +2,7 @@
     max-width: 600px;
     margin-left: auto !important;
     margin-right: auto !important;
+    font-weight: 300 !important;
 }
 
 
@@ -10,12 +11,14 @@
     margin-top: 20px;
     margin-left: auto !important;
     margin-right: auto !important;
+    font-weight: 300 !important;
 }
 
 .formControl{
-    border-color:black;
+    border-color:#808285;
     font-size:20px;
     border-radius: 0px;
+    font-weight: 300 !important;
 }
 
 .formGroupLeftCol{

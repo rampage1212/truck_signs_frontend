@@ -7,6 +7,7 @@ import {
   NavDropdown,
   Container,
   Form,
+  Select,
   FormControl,
   FormGroup,
   InputGroup,
@@ -18,11 +19,12 @@ import {
   FormLabel,
   ListGroup,
   Icon,
+  DropdownButton,
 } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import router from "next/router";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const domain = "http://127.0.0.1:8000/";
@@ -41,7 +43,7 @@ const ProductDetailComponent = ({ product, variations }) => {
   useEffect(async () => {
     getColors(setColors);
     setColor(product.product_color_default);
-    setAmount(1)
+    setAmount(1);
 
     const var_id = window.localStorage.getItem("product_variation_id");
     const product_id = window.localStorage.getItem(
@@ -70,11 +72,11 @@ const ProductDetailComponent = ({ product, variations }) => {
   };
 
   const createOrderHandler = async () => {
-    const color_id = (color==null)? -1: color.id;
+    const color_id = color == null ? -1 : color.id;
     await createOrder(color_id, amount, email, comment);
   };
 
-  return product == null || colors == null? (
+  return product == null || colors == null ? (
     <div></div>
   ) : (
     <Container className={styles.productGrid}>
@@ -98,45 +100,48 @@ const ProductDetailComponent = ({ product, variations }) => {
             {color == null ? (
               <div></div>
             ) : (
-              <FormGroup>
-                <div className={styles.colorFormWrapper}>
-                  <div
-                    className={styles.colorBox}
-                    style={{ backgroundColor: color.color_in_hex }}
-                  ></div>
-                  <div className={styles.dropdownDiv}>
-                    <Dropdown className={styles.colorDropdown}>
-                      <Dropdown.Toggle
-                        variant="outline-primary"
-                        id="dropdown-basic"
-                        className={styles.dropdownColorToggle}
-                      >
-                        Color
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        {colors.map((col, index) => {
-                          const color_in_hex = col.color_in_hex;
-                          return (
-                            <Dropdown.Item
-                              className={styles.dropdownItemColor}
-                              style={{
-                                backgroundColor: color_in_hex,
-                                color: color_in_hex,
-                              }}
-                              key={index}
-                              onSelect={(e) => {
-                                setColor(col);
-                              }}
-                            >
-                              {col.color_nickname}
-                            </Dropdown.Item>
-                          );
-                        })}
-                      </Dropdown.Menu>
-                    </Dropdown>
+              <div className={styles.productDiv}>
+                <FormGroup>
+                  <div className={styles.colorFormWrapper}>
+                    <div
+                      className={styles.colorBox}
+                      style={{ backgroundColor: color.color_in_hex }}
+                    ></div>
+                    <div className={styles.dropdownDiv}>
+                      <Dropdown className={`span3 ${styles.colorDropdown}`}>
+                        <Dropdown.Toggle
+                          variant="outline-primary"
+                          id="dropdown-basic"
+                          className={styles.dropdownColorToggle}
+                          drop='end'
+                        >
+                          Color
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className={styles.dropdownMenu}>
+                          {colors.map((col, index) => {
+                            const color_in_hex = col.color_in_hex;
+                            return (
+                              <Dropdown.Item
+                                className={styles.dropdownItemColor}
+                                style={{
+                                  backgroundColor: color_in_hex,
+                                  color: color_in_hex,
+                                }}
+                                key={index}
+                                onSelect={(e) => {
+                                  setColor(col);
+                                }}
+                              >
+                                {"-"}
+                              </Dropdown.Item>
+                            );
+                          })}
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </div>
                   </div>
-                </div>
-              </FormGroup>
+                </FormGroup>
+              </div>
             )}
             {custom_vars == null ? (
               <div></div>
@@ -144,32 +149,37 @@ const ProductDetailComponent = ({ product, variations }) => {
               <>
                 {custom_vars.map((cv, index) => {
                   return (
-                    <ListGroup key={index} className={styles.colorFormWrapper}>
-                      <div className={styles.deleteBox}>
-                        <div
-                          onClick={(e) =>
-                            deleteLetteringVariationHandler(cv.id)
-                          }
-                          className={styles.xTimesIconBox}
-                        >
-                          <FontAwesomeIcon
-                            className={styles.xTimesIcon}
-                            size="2x"
-                            icon={faTimes}
-                          />
+                    <div className={styles.productDiv}>
+                      <ListGroup
+                        key={index}
+                        className={styles.colorFormWrapper}
+                      >
+                        <div className={styles.deleteBox}>
+                          <div
+                            onClick={(e) =>
+                              deleteLetteringVariationHandler(cv.id)
+                            }
+                            className={styles.xTimesIconBox}
+                          >
+                            <FontAwesomeIcon
+                              className={styles.xTimesIcon}
+                              size="2x"
+                              icon={faTimes}
+                            />
+                          </div>
                         </div>
-                      </div>
-                      <ListGroup horizontal className={styles.listGroupItem}>
-                        <ListGroup.Item className={styles.spanListGroupItem}>
-                          <span className={styles.crimsonSpan}>
-                            {cv.lettering_item_category.title}:
-                          </span>{" "}
-                        </ListGroup.Item>
-                        <ListGroup.Item className={styles.pListGroupItem}>
-                          <p className={styles.variationsP}>{cv.lettering}</p>
-                        </ListGroup.Item>
+                        <ListGroup horizontal className={styles.listGroupItem}>
+                          <ListGroup.Item className={styles.spanListGroupItem}>
+                            <span className={styles.crimsonSpan}>
+                              {cv.lettering_item_category.title}:
+                            </span>{" "}
+                          </ListGroup.Item>
+                          <ListGroup.Item className={styles.pListGroupItem}>
+                            <p className={styles.variationsP}>{cv.lettering}</p>
+                          </ListGroup.Item>
+                        </ListGroup>
                       </ListGroup>
-                    </ListGroup>
+                    </div>
                   );
                 })}
               </>
@@ -178,84 +188,90 @@ const ProductDetailComponent = ({ product, variations }) => {
             {custom_vars == null ||
             custom_vars.length <
               product.category.max_amount_of_lettering_items ? (
-              <InputGroup className={styles.inputGroup}>
-                <div className={styles.dummyDeleteBox}></div>
-                <FormControl
-                  as="select"
-                  placeholder="Search"
-                  className={`mr-2 ${styles.categoryDropdown}`}
-                  aria-label="Search"
-                  onChange={(e) =>
-                    setLetteringCategoryIdHandler(
-                      e.target.value,
-                      variations,
-                      setLetteringCategoryId
-                    )
-                  }
-                >
-                  <option value={-1}>Add Type</option>
-                  {variations != null ? (
-                    variations.map((variation, index) => {
-                      return (
-                        <option value={index} key={index + 2}>
-                          {variation.title}
-                        </option>
-                      );
-                    })
-                  ) : (
-                    <>
-                      {" "}
-                      <option>No categories</option>
-                    </>
-                  )}
-                </FormControl>
+              <div className={styles.productDivAdd}>
+                <InputGroup className={styles.inputGroup}>
+                  <div className={styles.dummyDeleteBox}></div>
+                  <select className={`form-select ${styles.categoryDropdown}`}  ariaLabel="Default select example"
+                    as="select"
+                    onChange={(e) =>
+                      setLetteringCategoryIdHandler(
+                        e.target.value,
+                        variations,
+                        setLetteringCategoryId
+                      )
+                    }
+                  >
+                    <option value={-1} disabled selected>
+                      Add Type
+                    </option>
+                    {variations != null ? (
+                      variations.map((variation, index) => {
+                        return (
+                          <option
+                            value={index}
+                            key={index + 2}
+                            className={styles.option}
+                          >
+                            {variation.title}
+                          </option>
+                        );
+                      })
+                    ) : (
+                      <>
+                        {" "}
+                        <option>No categories</option>
+                      </>
+                    )}
+                    </select>
 
-                <FormControl
-                  type="search"
-                  placeholder="Line of lettering ... "
-                  className={`mr-2 ${styles.categoryAddLettering}`}
-                  aria-label="Search"
-                  onChange={(e) => setDummyVar(e.target.value)}
-                />
-                <Button
-                  className={styles.searchButton}
-                  onClick={(e) => {
-                    addLineHandler(e);
-                  }}
-                >
-                  Add Line
-                </Button>
-              </InputGroup>
+                  <FormControl
+                    type="search"
+                    placeholder="Line of lettering ... "
+                    className={`mr-2 ${styles.categoryAddLettering}`}
+                    aria-label="Search"
+                    onChange={(e) => setDummyVar(e.target.value)}
+                  />
+                  <Button
+                    className={styles.searchButton}
+                    onClick={(e) => {
+                      addLineHandler(e);
+                    }}
+                  >
+                    +
+                  </Button>
+                </InputGroup>
+              </div>
             ) : (
               <div></div>
             )}
           </Form>
           <Form className={styles.orderInfoForm}>
-            <InputGroup className={styles.formGroup}>
-              {/* <Form.Label className={styles.formLabel}>Comment</Form.Label> */}
-              <div className={styles.dummyDeleteBox}></div>
-              <FormControl
-                className={`${styles.formControl} ${styles.commentFormControl}`}
-                autoFocus
-                as="textarea"
-                placeholder="Comments ..."
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-              ></FormControl>
-            </InputGroup>
+            <div className={styles.productDivAdd}>
+              <InputGroup className={styles.formGroup}>
+                <div className={styles.dummyDeleteBox}></div>
+                <FormControl
+                  className={`${styles.formControl} ${styles.commentFormControl}`}
+                  autoFocus
+                  as="textarea"
+                  placeholder="Comments ..."
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                ></FormControl>
+              </InputGroup>
 
-            <InputGroup className={styles.formGroup}>
-              {/* <Form.Label className={styles.formLabel}>Email</Form.Label> */}
-              <div className={styles.dummyDeleteBox}></div>
-              <FormControl
-                className={styles.formControl}
-                autoFocus
-                placeholder="Email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></FormControl>
-            </InputGroup>
+              <InputGroup className={styles.formGroup}>
+                {/* <Form.Label className={styles.formLabel}>Email</Form.Label> */}
+                <div className={styles.dummyDeleteBox}></div>
+                <FormControl
+                  className={`${styles.formControl} ${styles.emailFormControl}`}
+                  autoFocus
+                  placeholder="Email ..."
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                ></FormControl>
+              </InputGroup>
+            </div>
             <div className={styles.orderNowButtonDiv}>
               <Button
                 onClick={(e) => {
@@ -406,8 +422,8 @@ const createOrder = async (product_color_id, amount, email, comment) => {
     .post(create_order_url, body, config)
     .then(async (res) => {
       const result = await res.data["Result"];
-      window.localStorage.removeItem("latest_customized_product_id")
-      window.localStorage.removeItem("product_variation_id")
+      window.localStorage.removeItem("latest_customized_product_id");
+      window.localStorage.removeItem("product_variation_id");
       router.push(`/order/${result.id}`);
     })
     .catch((error) => {
