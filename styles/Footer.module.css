@@ -18,7 +18,7 @@
     justify-content:center;
 }
 
-.footerLink, .p{
+.footerLink, .p, .contactUsP{
     color: white !important;
     padding-left:10px;
     text-decoration: none;
@@ -33,4 +33,9 @@
     padding-left:10px;
     font-weight: bold;
     text-decoration: none;
+}
+
+.contactUsP{
+    font-weight: bold;
+    float:right !important;
 }

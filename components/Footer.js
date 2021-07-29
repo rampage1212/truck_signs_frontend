@@ -30,6 +30,7 @@ const Footer = () => {
       <Link href="/">
         <a className={styles.footerLink}>Terms</a>
       </Link>{" "}
+      <p className={styles.contactUsP}>Contact us at Signsfortrucks@gmail.com</p>
       </Container>
     </footer>
   );
