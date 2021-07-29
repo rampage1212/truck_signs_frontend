@@ -17,7 +17,8 @@
 }
 
 .orderLogoButton {
-  width: 100px;
+  min-width: 100px;
+  max-width: 250px;
   margin-top: 20px;
   margin-left: auto !important;
   margin-right: auto !important;
