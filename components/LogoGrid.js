@@ -25,7 +25,7 @@ const LogoGrid = () => {
   const [logos, setLogos] = useState(null);
 
   useEffect(async () => {
-    await getLogos(setLogos);
+     getLogos(setLogos);
   }, []);
 
   return logos == null ? (
