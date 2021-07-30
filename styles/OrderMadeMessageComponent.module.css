@@ -4,7 +4,7 @@
   text-align: center !important;
   margin-top: 50px;
   border: 1px solid #bf1e2d;
-  height: 100px;
+  height: max-content;
   width: min(1000px, 90%);
   font-weight: 300 !important;
 }
