@@ -150,6 +150,9 @@
 
 .testimonialsRow{
   width: 100vw !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
 }
 
 .testimonialsCol{
