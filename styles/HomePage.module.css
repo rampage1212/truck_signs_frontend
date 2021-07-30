@@ -169,8 +169,8 @@
 }
 
 .testimonialsImg {
-  height:  min(300px, 90vw);
-  width:  min(400px, 90vw);
+  height:  min(300px, 80vw);
+  width:  min(400px, 80vw);
   margin-left: auto !important;
   margin-right: auto !important;
 }
