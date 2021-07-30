@@ -1,19 +1,21 @@
 .container {
-  width: 100%;
+  width: 100vw;
   font-weight: 300 !important;
 }
 
-.truckImage {
+.truckImg {
   height: 500px;
   width: 100%;
 }
 
 .bannerContainer {
   background-color: #bf1e2d;
-  width: 100vw !important;
+  width: 100% !important;
   height: fit-content !important;
   text-align: center !important;
   font-family: Athena;
+  margin-left: auto !important;
+  margin-right: auto !important
 }
 
 .banner {
@@ -124,6 +126,8 @@
   text-align: center;
   color: black;
   font-weight: 300 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .testimonialsHeader {
@@ -139,16 +143,25 @@
   margin: 0px !important;
   padding: 0px !important;
   font-size: 20px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .testimonialsWrapper {
   text-align: center;
   margin-top: 30px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
 }
 
 .testimonialsImg {
-  height: 300px;
-  width: 400px;
+  height:  min(300px, 90vw);
+  width:  min(400px, 90vw);
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .testimonialsFooter {
@@ -156,7 +169,7 @@
   color: white;
   font-weight: 300 !important;
   height: 30px;
-  width: 400px;
+  width: min(400px, 90vw);
   margin-left: auto !important;
   margin-right: auto !important;
 }

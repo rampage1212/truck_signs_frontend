@@ -21,17 +21,25 @@ import router from "next/router";
 
 const Footer = () => {
   return (
-    <footer id='footer' className={styles.footer}>
+    <footer id="footer" className={styles.footer}>
+        <Row>
       <Container className={styles.footerWrapper}>
-      <p className={styles.p}>Copyright &copy; 2021 Signs for Trucks All Rights Reserved</p>
-      <Link href="/">
-        <a className={styles.footerLink}>Privacy Policy</a>
-      </Link>{" "}
-      <Link href="/">
-        <a className={styles.footerLink}>Terms</a>
-      </Link>{" "}
-      <p className={styles.contactUsP}>Contact us at Signsfortrucks@gmail.com</p>
+          <p className={styles.p}>
+            Copyright &copy; 2021 Signs for Trucks All Rights Reserved
+          </p>
+          <Link href="/">
+            <a className={styles.footerLink}>Privacy Policy</a>
+          </Link>{" "}
+          <Link href="/">
+            <a className={styles.footerLink}>Terms</a>
+          </Link>{" "}
       </Container>
+        </Row>
+        <Row>
+          <p className={styles.contactUsP}>
+            Contact us at Signsfortrucks@gmail.com
+          </p>
+        </Row>
     </footer>
   );
 };
