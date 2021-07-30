@@ -254,7 +254,7 @@ const ProductDetailComponent = ({ product, variations }) => {
               <div></div>
             )}
 
-            <InputGroup className={styles.formGroupSpan}>
+            <InputGroup className={`${styles.formGroupSpan} ${styles.amountFormControlExtra}`}>
               <div className={styles.dummyDeleteBox}></div>
               <InputGroup.Text className={styles.inputGroupText}>Amount</InputGroup.Text>
               <FormControl
