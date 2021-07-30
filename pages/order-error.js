@@ -2,9 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import style from "../styles/Home.module.css";
 import NextNavbar from "../components/Navbar";
-import OrderMadeMessageComponent from "../components/OrderMadeMessageComponent";
+import OrderErrorMessageComponent from "../components/OrderErrorMessageComponent";
 
-export default function OrderMade() {
+export default function OrderError() {
   return (
     <div className={style.container}>
       <Head>
@@ -14,7 +14,7 @@ export default function OrderMade() {
       </Head>
 
       <main>
-        <OrderMadeMessageComponent />
+        <OrderErrorMessageComponent />
       </main>
     </div>
   );

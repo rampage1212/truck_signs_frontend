@@ -31,7 +31,6 @@ export default function OrderDetail() {
   }, []);
 
   // NOTE Components
-  console.log(order);
   return order == undefined || order == null ? (
     <div></div>
   ) : (

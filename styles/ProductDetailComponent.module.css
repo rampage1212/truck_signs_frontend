@@ -169,7 +169,7 @@
 }
 
 .categoryDropdown {
-  max-width: min-content;
+  max-width: max-content;
   border-color: #808285;
   background-color: white;
   color: black;
@@ -209,6 +209,24 @@
   width: (100% - 52px);
 }
 
+.formGroupSpan{
+  margin-left: auto;
+  margin-top: 20px;
+  max-width: 460px;
+  text-align:center;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.inputGroupText{
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  font-weight: 300 !important;
+  background-color:white;
+  border: 1px solid #808285;
+}
+
+
 .dummyDeleteBox {
   height: 40px;
   width: 52px;
@@ -246,6 +264,7 @@
   background-color: #bf1e2d;
   color: white;
   margin-top: 20px;
+  border-radius: 0px;
 }
 
 .orderNowButton:hover,
@@ -254,4 +273,9 @@
   border-color: crimson;
   background-color: crimson;
   color: white;
+}
+
+
+.amountFormControl{
+  max-width: 65px;
 }

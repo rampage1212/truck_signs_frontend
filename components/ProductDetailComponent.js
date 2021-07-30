@@ -90,8 +90,18 @@ const ProductDetailComponent = ({ product, variations }) => {
               ></img>
             </div>
             <p className={styles.vinylInfo}>
-              LorenIpsummm mmmmmm mmmmmmmmm mmmmmmm mmmmmmmmmm mmmmmmmmmmm
-              mmmmmmmmmmm mmmmmmmm
+              Signs are easy to apply, die-cut from a durable 24 inch by 14
+              inch, 9 year, outdoor adhesive vinyl. Company name, origin, DOT
+              number, VIN, MC, or KYU numbers comes on one, ready to apply
+              sheet. The color you choose is the color of the lettering. There
+              is no clear background as these are die-cut lettering that is
+              pre-spaced and ready to apply. The decal will meet USDOT
+              regulations for compliance.
+            </p>
+            <p className={styles.vinylInfo}>
+              For hightest visibility we recommend use contrast colors, sign
+              with background. All products are made and produced in the USA. If
+              you have any questions prior to purchasing, please contact us.
             </p>
           </div>
         </Col>
@@ -113,7 +123,7 @@ const ProductDetailComponent = ({ product, variations }) => {
                           variant="outline-primary"
                           id="dropdown-basic"
                           className={styles.dropdownColorToggle}
-                          drop='end'
+                          drop="end"
                         >
                           Color
                         </Dropdown.Toggle>
@@ -149,11 +159,8 @@ const ProductDetailComponent = ({ product, variations }) => {
               <>
                 {custom_vars.map((cv, index) => {
                   return (
-                    <div className={styles.productDiv}>
-                      <ListGroup
-                        key={index}
-                        className={styles.colorFormWrapper}
-                      >
+                    <div key={index} className={styles.productDiv}>
+                      <ListGroup className={styles.colorFormWrapper}>
                         <div className={styles.deleteBox}>
                           <div
                             onClick={(e) =>
@@ -191,7 +198,9 @@ const ProductDetailComponent = ({ product, variations }) => {
               <div className={styles.productDivAdd}>
                 <InputGroup className={styles.inputGroup}>
                   <div className={styles.dummyDeleteBox}></div>
-                  <select className={`form-select ${styles.categoryDropdown}`}  ariaLabel="Default select example"
+                  <select
+                    className={`form-select ${styles.categoryDropdown}`}
+                    aria-label="Default select example"
                     as="select"
                     onChange={(e) =>
                       setLetteringCategoryIdHandler(
@@ -201,7 +210,7 @@ const ProductDetailComponent = ({ product, variations }) => {
                       )
                     }
                   >
-                    <option value={-1} disabled selected>
+                    <option value={-1} default>
                       Add Type
                     </option>
                     {variations != null ? (
@@ -222,7 +231,7 @@ const ProductDetailComponent = ({ product, variations }) => {
                         <option>No categories</option>
                       </>
                     )}
-                    </select>
+                  </select>
 
                   <FormControl
                     type="search"
@@ -244,6 +253,19 @@ const ProductDetailComponent = ({ product, variations }) => {
             ) : (
               <div></div>
             )}
+
+            <InputGroup className={styles.formGroupSpan}>
+              <div className={styles.dummyDeleteBox}></div>
+              <InputGroup.Text className={styles.inputGroupText}>Amount</InputGroup.Text>
+              <FormControl
+                className={`${styles.formControl} ${styles.emailFormControl} ${styles.amountFormControl}`}
+                autoFocus
+                placeholder="Amount ..."
+                type="number"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+              ></FormControl>
+            </InputGroup>
           </Form>
           <Form className={styles.orderInfoForm}>
             <div className={styles.productDivAdd}>
@@ -333,7 +355,6 @@ const addLine = async (id, variation, lettering_variation_category_id) => {
     .post(lettering_var_create_url, body, config)
     .then(async (res) => {
       const result = await res.data["Result"];
-      console.log(result);
       window.localStorage.setItem("product_variation_id", result.id);
       window.localStorage.setItem("latest_customized_product_id", id);
       router.reload();
@@ -406,11 +427,13 @@ const createOrder = async (product_color_id, amount, email, comment) => {
     },
   };
 
+  const new_amount = parseInt(amount)
+
   const id = window.localStorage.getItem("product_variation_id");
 
   const body = JSON.stringify({
     product_color_id,
-    amount,
+    amount: new_amount,
     order: {
       user_email: email,
       comment,

@@ -203,5 +203,6 @@ const makePayment = (body, order_id) => {
     })
     .catch((error) => {
       console.log(error);
+      router.push('/order-error')
     });
 };
