@@ -180,7 +180,7 @@
   color: white;
   font-weight: 300 !important;
   height: 30px;
-  width: min(400px, 90vw);
+  width: min(400px, 80vw);
   margin-left: auto !important;
   margin-right: auto !important;
 }
