@@ -1,61 +1,84 @@
-.footer{
+.footer {
+  background-color: #bf1e2d;
+  color: white;
+  font-weight: 300 !important;
+  text-align: center;
+  margin-top: 50px;
+  height: 200px;
+  width: 100vw !important;
+  margin: 0px;
+  padding: 0px;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.footerWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media screen and (max-width: 758px) {
+  .footerWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center;
+  }
+
+  .footer {
     background-color: #bf1e2d;
-    color:white;
+    color: white;
     font-weight: 300 !important;
     text-align: center;
-    margin-top:50px;
-    height: 200px;
+    margin-top: 50px;
+    height: 300px;
     width: 100%;
     position: relative;
     bottom: 0;
-}
+  }
 
-.footerWrapper{
-    display:flex;
-    flex-direction:row;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    justify-content:center;
-}
-
-@media screen and (max-width:758px) {
-    .footerWrapper{
-        display:flex;
-        flex-direction:column;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        justify-content:center;
-    }
-
-    .footer{
-        background-color: #bf1e2d;
-        color:white;
-        font-weight: 300 !important;
-        text-align: center;
-        margin-top:50px;
-        height: 300px;
-        width: 100%;
-        position: relative;
-        bottom: 0;
-    }
-}
-
-.footerLink, .p, .contactUsP{
+  .footerLink,
+  .p,
+  .contactUsP {
     color: white !important;
     text-decoration: none;
-    margin-top:30px;
+    margin-top: 30px;
+    padding:0px;
+  }
+}
+
+
+
+.footerLink,
+.p,
+.contactUsP {
+  color: white !important;
+  text-decoration: none;
+  margin-top: 30px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
 .footerLink:hover,
 .footerLink:after,
 .footerLink:focus,
-.footerLink:active{
-    color: white !important;
-    font-weight: bold;
-    text-decoration: none;
+.footerLink:active {
+  color: white !important;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.contactUsP{
-    font-weight: bold;
-    float:right !important;
+.contactUsP {
+  font-weight: bold;
+}
+
+.contactUsRow {
+  width: min-content;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
