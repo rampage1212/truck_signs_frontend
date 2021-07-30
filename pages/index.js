@@ -43,7 +43,7 @@ export default function Home() {
         />
       </Head>
 
-      <main>
+      <main class={style.main}>
         <HomePage />
       </main>
     </div>

@@ -279,3 +279,12 @@
 .amountFormControl{
   max-width: 65px;
 }
+
+@media screen and (max-width:758px) {
+  .dummyDeleteBox{
+    width:0px;
+  }
+  .amountFormControlExtra{
+    padding-left:20px
+  }
+}
