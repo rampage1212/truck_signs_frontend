@@ -125,6 +125,7 @@
 .testimonialsContainer {
   text-align: center;
   color: black;
+  width: 100vw !important;
   font-weight: 300 !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -145,6 +146,10 @@
   font-size: 20px;
   margin-left: auto !important;
   margin-right: auto !important;
+}
+
+.testimonialsRow{
+  width: 100vw !important;
 }
 
 .testimonialsWrapper {
