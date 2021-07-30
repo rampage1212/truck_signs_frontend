@@ -8,7 +8,7 @@ import router from "next/router";
 import { useRouter } from "next/router";
 import PaymentForm from "../../../components/PaymentForm";
 
-const domain = "http://127.0.0.1:8000/";
+const domain = "https://truck-signs-api.herokuapp.com/";
 
 export default function OrderDetail() {
   const router = useRouter();
