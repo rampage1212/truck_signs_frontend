@@ -8,15 +8,30 @@ export default function HowTo() {
   return (
     <div className={style.container}>
       <Head>
-        <title lang="en-us">How To Truck Signs</title>
+        <title lang="en-us">How To Apply Truck Signs Adhesive Vinyls</title>
+        <meta
+          property="og:title"
+          content="How To Apply Truck Signs Adhesive Vinyls"
+        />
+        <meta
+          property="og:description"
+          content="This is the how-to page to give a guidance of how to apply the adhesive vinyls."
+        />
+        <meta
+          property="og:url"
+          content="https://truck-signs-frontend-nextjs.vercel.app/how-to/"
+        />
+        <meta property="og:type" content="website" />
         <meta
           name="description"
           content="This is the how-to page to give a guidance of how to apply the adhesive vinyls."
         />
         <link rel="icon" href="/favicon.ico" />
 
-        <link rel="canonical" href="https://truck-signs-frontend-nextjs.vercel.app/how-to/" />
-
+        <link
+          rel="canonical"
+          href="https://truck-signs-frontend-nextjs.vercel.app/how-to/"
+        />
       </Head>
 
       <main>

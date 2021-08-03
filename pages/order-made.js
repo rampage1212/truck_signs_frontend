@@ -8,11 +8,24 @@ export default function OrderMade() {
   return (
     <div className={style.container}>
       <Head>
-        <title lang="en-us">Truck Sign ordered</title>
+        <title lang="en-us">Truck Sign Adhesive Vinyl ordered</title>
         <meta
           name="description"
           content="This page is shown because in payment was produced successfully."
         />
+        <meta
+          property="og:title"
+          content="Truck Sign Adhesive Vinyl ordered"
+        />
+        <meta
+          property="og:description"
+          content="This page is shown because in payment was produced successfully."
+        />
+        <meta
+          property="og:url"
+          content="https://truck-signs-frontend-nextjs.vercel.app/order-made/"
+        />
+        <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
 
         <link rel="canonical" href="https://truck-signs-frontend-nextjs.vercel.app/order-made/" />

@@ -36,16 +36,29 @@ export default function OrderDetail() {
   ) : (
     <div className={styles.container}>
       <Head>
-        <title lang="en-us">Truck Signs Order</title>
+        <title lang="en-us">Truck Signs Adhesive Vinyl Order</title>
         <meta
           name="description"
           content="Here is the order of the truck sign."
         />
+        <meta
+          property="og:title"
+          content="Truck Signs Adhesive Vinyl Order"
+        />
+        <meta
+          property="og:description"
+          content="Here is the order of the truck sign."
+        />
+        <meta
+          property="og:url"
+          content={`https://truck-signs-frontend-nextjs.vercel.app/order/${order.id}/`}
+        />
+        <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
 
         <link
           rel="canonical"
-          href={`https://truck-signs-frontend-nextjs.vercel.app/product/${order.id}/`}
+          href={`https://truck-signs-frontend-nextjs.vercel.app/order/${order.id}/`}
         />
       </Head>
 
