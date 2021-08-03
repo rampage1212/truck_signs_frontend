@@ -95,7 +95,7 @@ const ProductDetailComponent = ({ product, variations }) => {
               number, VIN, MC, or KYU numbers comes on one, ready to apply
               sheet. The color you choose is the color of the lettering. There
               is no clear background as these are die-cut lettering that is
-              pre-spaced and ready to apply. The decal will meet USDOT
+              pre-spaced and ready to apply. The decal will meet US DOT
               regulations for compliance.
             </p>
             <p className={styles.vinylInfo}>
