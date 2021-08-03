@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 
-Sitemap: https://truck-signs-frontend-nextjs.vercel.app/public/sitemap
+Sitemap: https://truck-signs-frontend-nextjs.vercel.app/sitemap
