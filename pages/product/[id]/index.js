@@ -7,7 +7,7 @@ import ProductDetailComponent from "../../../components/ProductDetailComponent";
 import router from "next/router";
 import { useRouter } from "next/router";
 
-const domain = "http://127.0.0.1:8000/";
+const domain = "https://truck-signs-api.herokuapp.com/";
 
 export default function ProductDetail() {
   const router = useRouter();
