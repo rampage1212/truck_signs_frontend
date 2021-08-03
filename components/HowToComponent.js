@@ -25,7 +25,7 @@ import ReactPlayer from "react-player";
 import { Video, CloudinaryContext } from "cloudinary-react";
 import { useRef } from "react";
 
-const domain = "https://truck-signs-api.herokuapp.com/";
+const domain = "http://127.0.0.1:8000/";
 
 const HowToComponent = () => {
   const videoRef = useRef();
@@ -41,6 +41,7 @@ const HowToComponent = () => {
               <div>
                 <Video
                   publicId="truck-sings-videos/video-sample_hbbiwp"
+                  alt="Video of how to apply Truck Sign Vinyl"
                   width="100%"
                   controls
                   innerRef={videoRef}
@@ -51,9 +52,9 @@ const HowToComponent = () => {
         </Col>
         <Col className={styles.infoCol} xs={12} sm={12} md={6} lg={6}>
           <div className={styles.infoDiv}>
-            <p className={styles.header}>
+            <h1 className={styles.header}>
               How to install vinyl graphics on the truck
-            </p>
+            </h1>
             <p className={styles.p}>
               Signs area easy to apply, die-cut from a durable 24 inch, 9 years,
               outdoor adhesive vinyl.

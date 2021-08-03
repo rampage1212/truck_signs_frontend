@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/HomePage.module.css";
 import truckImg from "../public/images/Truck-Instructions.png";
-import truckShippingIcon from "../public/logos/Truck-minilogo.svg";
-import watchIcon from "../public/logos/watch-minilogo.svg";
-import settingsIcon from "../public/logos/setting-minilogo.svg";
+import truckShippingIcon from "../public/logos/Truck-mini-logo.svg";
+import watchIcon from "../public/logos/watch-mini-logo.svg";
+import settingsIcon from "../public/logos/setting-mini-logo.svg";
 import {
   Nav,
   Navbar,
@@ -26,7 +26,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import router from "next/router";
 
-const domain = "https://truck-signs-api.herokuapp.com/";
+const domain = "http://127.0.0.1:8000/";
 
 const HomePage = () => {
   const [testimonials, setTestimonials] = useState(null);
@@ -42,16 +42,16 @@ const HomePage = () => {
   return (
     <>
       <div className={styles.bannerContainer}>
-        <p className={styles.banner}>
+        <h1 className={styles.banner}>
           Common area to put the logo and other decals
-        </p>
+        </h1>
       </div>
       <Container className={styles.container}>
-        <Image src={truckImg} className={styles.truckImg}></Image>
+        <Image src={truckImg} className={styles.truckImg} alt="Truck Sign Vinyl"></Image>
       </Container>
       <LogoGrid />
       <div className={styles.uploadLogoContainer}>
-        <h1 className={styles.uploadLogoHeader}>Have your own Logo?</h1>
+        <h2 className={styles.uploadLogoHeader}>Have your own Logo?</h2>
         <p className={styles.uploadLogoPBold}>
           You can upload your own logo and order how many units you need
         </p>
@@ -59,9 +59,7 @@ const HomePage = () => {
           Just make sure to upload the correct file, PDF or AI are very well
           welcome!
         </p>
-        {/* <Button size="sm" className={styles.uploadButton}>
-          UPLOAD NOW
-        </Button> */}
+
         {/* NOTE Upload file */}
 
         <label for="uploadButton" className={styles.uploadButton}>
@@ -82,7 +80,7 @@ const HomePage = () => {
               <Image
                 className={styles.cardIcon}
                 src={truckShippingIcon}
-                alt="Icon"
+                alt="Truck Sign Vinyl Shipping Icon"
                 height={50}
                 width={50}
               ></Image>
@@ -106,7 +104,7 @@ const HomePage = () => {
               <Image
                 className={styles.cardIcon}
                 src={watchIcon}
-                alt="Icon"
+                alt="Truck Sign Vinyl Watch Icon"
                 height={50}
                 width={50}
               ></Image>
@@ -130,7 +128,7 @@ const HomePage = () => {
               <Image
                 className={styles.cardIcon}
                 src={settingsIcon}
-                alt="Icon"
+                alt="Truck Sign Apply Vinyl Icon"
                 height={50}
                 width={50}
               ></Image>
@@ -151,7 +149,7 @@ const HomePage = () => {
         </Row>
       </div>
       <Container className={styles.testimonialsContainer}>
-        <h1 className={styles.testimonialsHeader}>Testimonials</h1>
+        <h2 className={styles.testimonialsHeader}>Testimonials</h2>
         <p className={styles.testimonialsP}>Our satisfied client works</p>
       </Container>
       {testimonials == null ? (

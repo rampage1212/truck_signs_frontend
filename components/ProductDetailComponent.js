@@ -27,7 +27,7 @@ import router from "next/router";
 import { faTimes, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const domain = "https://truck-signs-api.herokuapp.com/";
+const domain = "http://127.0.0.1:8000/";
 
 const ProductDetailComponent = ({ product, variations }) => {
   const [colors, setColors] = useState(null);
@@ -95,7 +95,7 @@ const ProductDetailComponent = ({ product, variations }) => {
               number, VIN, MC, or KYU numbers comes on one, ready to apply
               sheet. The color you choose is the color of the lettering. There
               is no clear background as these are die-cut lettering that is
-              pre-spaced and ready to apply. The decal will meet USDOT
+              pre-spaced and ready to apply. The decal will meet US DOT
               regulations for compliance.
             </p>
             <p className={styles.vinylInfo}>
