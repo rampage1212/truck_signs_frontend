@@ -22,7 +22,7 @@ import router from "next/router";
 const Footer = () => {
   return (
     <footer id="footer" className={styles.footer}>
-        <Row>
+        <Row className={styles.footerWrapper}>
       <Container className={styles.footerWrapper}>
           <p className={styles.p}>
             Copyright &copy; 2021 Signs for Trucks All Rights Reserved
@@ -35,7 +35,7 @@ const Footer = () => {
           </Link>{" "}
       </Container>
         </Row>
-        <Row>
+        <Row className={styles.contactUsRow}>
           <p className={styles.contactUsP}>
             Contact us at Signsfortrucks@gmail.com
           </p>
