@@ -27,7 +27,7 @@ import router from "next/router";
 import { faTimes, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const domain = "https://truck-signs-api.herokuapp.com/";
+const domain = "http://127.0.0.1:8000/";
 
 const ProductDetailComponent = ({ product, variations }) => {
   const [colors, setColors] = useState(null);

@@ -25,7 +25,7 @@ import ReactPlayer from "react-player";
 import { Video, CloudinaryContext } from "cloudinary-react";
 import { useRef } from "react";
 
-const domain = "https://truck-signs-api.herokuapp.com/";
+const domain = "http://127.0.0.1:8000/";
 
 const HowToComponent = () => {
   const videoRef = useRef();
