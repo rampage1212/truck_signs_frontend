@@ -36,9 +36,17 @@ export default function OrderDetail() {
   ) : (
     <div className={styles.container}>
       <Head>
-        <title>Truck Signs Order</title>
-        <meta name="description" content="Here is the order of the truck sign." />
+        <title lang="en-us">Truck Signs Order</title>
+        <meta
+          name="description"
+          content="Here is the order of the truck sign."
+        />
         <link rel="icon" href="/favicon.ico" />
+
+        <link
+          rel="canonical"
+          href={`https://truck-signs-frontend-nextjs.vercel.app/product/${order.id}/`}
+        />
       </Head>
 
       <main className={styles.main}>

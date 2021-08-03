@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className={style.container}>
       <Head>
-        <title>Truck Signs</title>
+        <title lang="en-us">Truck Signs</title>
         <meta
           name="description"
           content="A website to buy customizable truck signs which are adhesive vinyls that can contain the company name, origin, DOT
@@ -45,6 +45,9 @@ export default function Home() {
           as="font"
           crossOrigin=""
         />
+
+      <link rel="canonical" href="https://truck-signs-frontend-nextjs.vercel.app/" />
+
       </Head>
 
       <main className={style.main}>

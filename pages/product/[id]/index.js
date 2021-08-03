@@ -43,12 +43,17 @@ export default function ProductDetail() {
   ) : (
     <div className={styles.container}>
       <Head>
-        <title>Truck Signs Product</title>
+        <title lang="en-us">Truck Signs Product</title>
         <meta
           name="description"
           content="In here the adhesive vinal can be customized."
         />
         <link rel="icon" href="/favicon.ico" />
+
+        <link
+          rel="canonical"
+          href={`https://truck-signs-frontend-nextjs.vercel.app/product/${product.id}/`}
+        />
       </Head>
 
       <main className={styles.main}>

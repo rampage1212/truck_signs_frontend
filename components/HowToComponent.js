@@ -37,7 +37,10 @@ const HowToComponent = () => {
       <Row className={styles.row}>
         <Col className={styles.videoCol} xs={12} sm={12} md={6} lg={6}>
           <div className={styles.videoDiv}>
-            <CloudinaryContext cloud_name="trucksigns17">
+            <CloudinaryContext
+              cloud_name="trucksigns17"
+              alt="Video of how to apply Truck Sign Vinyl"
+            >
               <div>
                 <Video
                   publicId="truck-sings-videos/video-sample_hbbiwp"

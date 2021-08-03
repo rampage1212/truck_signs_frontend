@@ -47,7 +47,11 @@ const HomePage = () => {
         </h1>
       </div>
       <Container className={styles.container}>
-        <Image src={truckImg} className={styles.truckImg} alt="Truck Sign Vinyl"></Image>
+        <Image
+          src={truckImg}
+          className={styles.truckImg}
+          alt="Truck Sign Vinyl"
+        ></Image>
       </Container>
       <LogoGrid />
       <div className={styles.uploadLogoContainer}>
@@ -167,7 +171,11 @@ const HomePage = () => {
                 className={styles.testimonialsCol}
               >
                 <Container className={styles.testimonialsWrapper}>
-                  <img className={styles.testimonialsImg} src={tes.image}></img>
+                  <img
+                    alt="Truck Sign Vinyl testimonial"
+                    className={styles.testimonialsImg}
+                    src={tes.image}
+                  ></img>
                   <div className={styles.testimonialsFooter}>
                     <p className={styles.testimonialsP}>{tes.text}</p>
                   </div>
