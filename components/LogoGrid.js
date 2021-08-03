@@ -43,7 +43,7 @@ const LogoGrid = () => {
               lg={3}
               className={styles.logoCol}
             >
-              <img src={log.image} className={styles.logoImage}></img>
+              <img alt="Truck Sign Vinyl Logo" src={log.image} className={styles.logoImage}></img>
               <Link href={`/product/${log.id}/`}>
                 <Button size="sm" className={styles.orderLogoButton}>
                   ORDER NOW

@@ -45,7 +45,7 @@ const PricesGrid = () => {
             >
                 <Link href={`/product/${prod.sample_product_id}/`}>
               <div className={styles.productWrapper}>
-                <img alr="Image of truck sign vinyl" src={prod.image} className={styles.productImage}></img>
+                <img alt="Image of truck sign vinyl" src={prod.image} className={styles.productImage}></img>
                 <div className={styles.crimsonSpanContainer}>
                   <span className={styles.crimsonSpan}>{prod.title}</span>
                   <span className={styles.crimsonSpanPrice}>${parseFloat(prod.base_price).toFixed(2)}</span>

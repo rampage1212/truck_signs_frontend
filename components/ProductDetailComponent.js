@@ -85,6 +85,7 @@ const ProductDetailComponent = ({ product, variations }) => {
           <div className={styles.productImageColWrapper}>
             <div className={styles.productImageDiv}>
               <img
+                alt="Truck Sign Vinyl Product"
                 className={styles.productImage}
                 src={product.detail_image}
               ></img>
@@ -254,9 +255,13 @@ const ProductDetailComponent = ({ product, variations }) => {
               <div></div>
             )}
 
-            <InputGroup className={`${styles.formGroupSpan} ${styles.amountFormControlExtra}`}>
+            <InputGroup
+              className={`${styles.formGroupSpan} ${styles.amountFormControlExtra}`}
+            >
               <div className={styles.dummyDeleteBox}></div>
-              <InputGroup.Text className={styles.inputGroupText}>Amount</InputGroup.Text>
+              <InputGroup.Text className={styles.inputGroupText}>
+                Amount
+              </InputGroup.Text>
               <FormControl
                 className={`${styles.formControl} ${styles.emailFormControl} ${styles.amountFormControl}`}
                 autoFocus
@@ -427,7 +432,7 @@ const createOrder = async (product_color_id, amount, email, comment) => {
     },
   };
 
-  const new_amount = parseInt(amount)
+  const new_amount = parseInt(amount);
 
   const id = window.localStorage.getItem("product_variation_id");
 
