@@ -7,7 +7,7 @@ import ProductDetailComponent from "../../../components/ProductDetailComponent";
 import router from "next/router";
 import { useRouter } from "next/router";
 
-const domain = "https://truck-signs-api.herokuapp.com/";
+const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
 export default function ProductDetail() {
   const router = useRouter();
