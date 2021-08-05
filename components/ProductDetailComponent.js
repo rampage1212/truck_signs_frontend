@@ -27,7 +27,11 @@ import router from "next/router";
 import { faTimes, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const domain = "http://127.0.0.1:8000/";
+
+
+
+
+const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
 const ProductDetailComponent = ({ product, variations }) => {
   const [colors, setColors] = useState(null);
@@ -85,6 +89,7 @@ const ProductDetailComponent = ({ product, variations }) => {
           <div className={styles.productImageColWrapper}>
             <div className={styles.productImageDiv}>
               <img
+                alt="Truck Sign Vinyl Product"
                 className={styles.productImage}
                 src={product.detail_image}
               ></img>
@@ -254,9 +259,13 @@ const ProductDetailComponent = ({ product, variations }) => {
               <div></div>
             )}
 
-            <InputGroup className={`${styles.formGroupSpan} ${styles.amountFormControlExtra}`}>
+            <InputGroup
+              className={`${styles.formGroupSpan} ${styles.amountFormControlExtra}`}
+            >
               <div className={styles.dummyDeleteBox}></div>
-              <InputGroup.Text className={styles.inputGroupText}>Amount</InputGroup.Text>
+              <InputGroup.Text className={styles.inputGroupText}>
+                Amount
+              </InputGroup.Text>
               <FormControl
                 className={`${styles.formControl} ${styles.emailFormControl} ${styles.amountFormControl}`}
                 autoFocus
@@ -427,7 +436,7 @@ const createOrder = async (product_color_id, amount, email, comment) => {
     },
   };
 
-  const new_amount = parseInt(amount)
+  const new_amount = parseInt(amount);
 
   const id = window.localStorage.getItem("product_variation_id");
 

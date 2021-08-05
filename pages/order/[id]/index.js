@@ -8,7 +8,7 @@ import router from "next/router";
 import { useRouter } from "next/router";
 import PaymentForm from "../../../components/PaymentForm";
 
-const domain = "http://127.0.0.1:8000/";
+const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
 export default function OrderDetail() {
   const router = useRouter();
@@ -36,9 +36,30 @@ export default function OrderDetail() {
   ) : (
     <div className={styles.container}>
       <Head>
-        <title>Truck Signs Order</title>
-        <meta name="description" content="Here is the order of the truck sign." />
+        <title lang="en-us">Truck Signs Adhesive Vinyl Order</title>
+        <meta
+          name="description"
+          content="Here is the order of the truck sign."
+        />
+        <meta
+          property="og:title"
+          content="Truck Signs Adhesive Vinyl Order"
+        />
+        <meta
+          property="og:description"
+          content="Here is the order of the truck sign."
+        />
+        <meta
+          property="og:url"
+          content={`https://truck-signs-frontend-nextjs.vercel.app/order/${order.id}/`}
+        />
+        <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
+
+        <link
+          rel="canonical"
+          href={`https://truck-signs-frontend-nextjs.vercel.app/order/${order.id}/`}
+        />
       </Head>
 
       <main className={styles.main}>

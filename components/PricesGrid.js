@@ -19,7 +19,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import router from "next/router";
 
-const domain = "http://127.0.0.1:8000/";
+const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
 const PricesGrid = () => {
   const [products, setProducts] = useState(null);
@@ -45,7 +45,7 @@ const PricesGrid = () => {
             >
                 <Link href={`/product/${prod.sample_product_id}/`}>
               <div className={styles.productWrapper}>
-                <img src={prod.image} className={styles.productImage}></img>
+                <img alt="Image of truck sign vinyl" src={prod.image} className={styles.productImage}></img>
                 <div className={styles.crimsonSpanContainer}>
                   <span className={styles.crimsonSpan}>{prod.title}</span>
                   <span className={styles.crimsonSpanPrice}>${parseFloat(prod.base_price).toFixed(2)}</span>

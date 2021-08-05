@@ -125,6 +125,7 @@
 .testimonialsContainer {
   text-align: center;
   color: black;
+  width: 100vw !important;
   font-weight: 300 !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -147,6 +148,19 @@
   margin-right: auto !important;
 }
 
+.testimonialsRow{
+  width: 100vw !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+}
+
+.testimonialsCol{
+  text-align: center;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .testimonialsWrapper {
   text-align: center;
   margin-top: 30px;
@@ -158,8 +172,8 @@
 }
 
 .testimonialsImg {
-  height:  min(300px, 90vw);
-  width:  min(400px, 90vw);
+  height:  min(300px, 80vw);
+  width:  min(400px, 80vw);
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -169,7 +183,7 @@
   color: white;
   font-weight: 300 !important;
   height: 30px;
-  width: min(400px, 90vw);
+  width: min(400px, 80vw);
   margin-left: auto !important;
   margin-right: auto !important;
 }

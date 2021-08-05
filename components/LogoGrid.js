@@ -19,7 +19,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import router from "next/router";
 
-const domain = "http://127.0.0.1:8000/";
+const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
 const LogoGrid = () => {
   const [logos, setLogos] = useState(null);
@@ -43,7 +43,7 @@ const LogoGrid = () => {
               lg={3}
               className={styles.logoCol}
             >
-              <img src={log.image} className={styles.logoImage}></img>
+              <img alt="Truck Sign Vinyl Logo" src={log.image} className={styles.logoImage}></img>
               <Link href={`/product/${log.id}/`}>
                 <Button size="sm" className={styles.orderLogoButton}>
                   ORDER NOW

@@ -26,7 +26,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import router from "next/router";
 
-const domain = "http://127.0.0.1:8000/";
+
+
+const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
 const HomePage = () => {
   const [testimonials, setTestimonials] = useState(null);
@@ -47,7 +49,11 @@ const HomePage = () => {
         </h1>
       </div>
       <Container className={styles.container}>
-        <Image src={truckImg} className={styles.truckImg} alt="Truck Sign Vinyl"></Image>
+        <Image
+          src={truckImg}
+          className={styles.truckImg}
+          alt="Truck Sign Vinyl"
+        ></Image>
       </Container>
       <LogoGrid />
       <div className={styles.uploadLogoContainer}>
@@ -167,7 +173,11 @@ const HomePage = () => {
                 className={styles.testimonialsCol}
               >
                 <Container className={styles.testimonialsWrapper}>
-                  <img className={styles.testimonialsImg} src={tes.image}></img>
+                  <img
+                    alt="Truck Sign Vinyl testimonial"
+                    className={styles.testimonialsImg}
+                    src={tes.image}
+                  ></img>
                   <div className={styles.testimonialsFooter}>
                     <p className={styles.testimonialsP}>{tes.text}</p>
                   </div>

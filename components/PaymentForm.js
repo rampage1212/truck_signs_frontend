@@ -19,7 +19,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import router from "next/router";
 
-const domain = "http://127.0.0.1:8000/";
+const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
 const PaymentForm = ({ order }) => {
   const [first_name, setFirstName] = useState("");
