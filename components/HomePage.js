@@ -26,7 +26,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import router from "next/router";
 
-const domain = "https://truck-signs-api.herokuapp.com/";
+
+
+const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
 const HomePage = () => {
   const [testimonials, setTestimonials] = useState(null);
@@ -53,7 +55,7 @@ const HomePage = () => {
           alt="Truck Sign Vinyl"
         ></Image>
       </Container>
-      <LogoGrid />
+      {/* <LogoGrid /> */}
       <div className={styles.uploadLogoContainer}>
         <h2 className={styles.uploadLogoHeader}>Have your own Logo?</h2>
         <p className={styles.uploadLogoPBold}>

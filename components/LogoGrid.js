@@ -19,7 +19,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import router from "next/router";
 
-const domain = "https://truck-signs-api.herokuapp.com/";
+const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
 const LogoGrid = () => {
   const [logos, setLogos] = useState(null);

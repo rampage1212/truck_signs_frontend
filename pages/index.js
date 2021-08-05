@@ -4,6 +4,7 @@ import style from "../styles/Home.module.css";
 import NextNavbar from "../components/Navbar";
 import HomePage from "../components/HomePage";
 
+
 export default function Home() {
   return (
     <div className={style.container}>
