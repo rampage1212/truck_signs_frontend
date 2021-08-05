@@ -55,7 +55,7 @@ const HomePage = () => {
           alt="Truck Sign Vinyl"
         ></Image>
       </Container>
-      {/* <LogoGrid /> */}
+      <LogoGrid />
       <div className={styles.uploadLogoContainer}>
         <h2 className={styles.uploadLogoHeader}>Have your own Logo?</h2>
         <p className={styles.uploadLogoPBold}>
