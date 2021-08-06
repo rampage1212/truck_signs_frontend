@@ -77,7 +77,7 @@ const ProductDetailComponent = ({ product, variations }) => {
     await createOrder(color_id, amount, email, comment);
   };
 
-  console.log(custom_vars)
+  console.log(custom_vars.length)
   return product == null || colors == null ? (
     <div></div>
   ) : (
