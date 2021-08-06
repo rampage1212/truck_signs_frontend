@@ -77,10 +77,7 @@ const ProductDetailComponent = ({ product, variations }) => {
     await createOrder(color_id, amount, email, comment);
   };
 
-  const isEmailDisabled = () => {
-    return custom_vars === null || custom_vars.length > 0;
-  };
-
+  console.log(custom_vars)
   return product == null || colors == null ? (
     <div></div>
   ) : (
