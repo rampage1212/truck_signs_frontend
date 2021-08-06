@@ -52,7 +52,7 @@
   font-size: 20px;
   font-weight: 300 !important;
   border-radius: 0px !important;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -78,18 +78,17 @@
   font-weight: 300 !important;
 }
 
-
 .dropdownItemColor {
   height: 100%;
   width: 90%;
-  margin-left:auto !important;
-  margin-right:auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   border: 1px solid transparent;
   border-radius: 15px;
   margin-top: 5px;
 }
 
-.option{
+.option {
   font-size: 20px;
   font-weight: 300 !important;
 }
@@ -100,7 +99,29 @@
   margin-right: auto !important;
 }
 
+.addNewPDiv {
+  text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.addNewP {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-size: 18px;
+  color: crimson;
+}
+
+.inputGroupAdd {
+  max-width: 500px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .productDivAdd {
+  margin-top: 5px;
+  padding-top: 0px;
   width: min(482px, 90%);
   margin-left: auto !important;
   margin-right: auto !important;
@@ -209,23 +230,22 @@
   width: (100% - 52px);
 }
 
-.formGroupSpan{
+.formGroupSpan {
   margin-left: auto;
   margin-top: 20px;
   max-width: 460px;
-  text-align:center;
+  text-align: center;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-.inputGroupText{
+.inputGroupText {
   font-size: 16px !important;
   font-weight: 300 !important;
   font-weight: 300 !important;
-  background-color:white;
+  background-color: white;
   border: 1px solid #808285;
 }
-
 
 .dummyDeleteBox {
   height: 40px;
@@ -248,15 +268,32 @@
   font-weight: 300 !important;
 }
 
+.commentFormControl:disabled{
+  font-size: 20px;
+  font-weight: 300 !important;
+  /* background-color:#c12e2a; */
+  opacity: 0.5;
+}
+
 .emailFormControl::placeholder {
   color: black;
   font-size: 20px;
   font-weight: 300 !important;
 }
 
+.emailFormControl:disabled{
+  font-size: 20px;
+  font-weight: 300 !important;
+  opacity: 0.5;
+}
+
 .orderNowButtonDiv {
   width: 100%;
   text-align: center;
+}
+
+.orderNowButtonDiv:disabled{
+  /* background-color: ; */
 }
 
 .orderNowButton {
@@ -275,16 +312,26 @@
   color: white;
 }
 
-
-.amountFormControl{
-  max-width: 65px;
+.inputGroupTextAmount {
+  border: 0px solid transparent;
+  font-size: 20px !important;
 }
 
-@media screen and (max-width:758px) {
-  .dummyDeleteBox{
-    width:0px;
+.amountFormControl {
+  max-width: 65px;
+  /* border: 0px solid transparent; */
+  border: 1px solid #808285;
+}
+
+.amountFormControlExtra {
+  margin-left: 70px !important;
+}
+
+@media screen and (max-width: 758px) {
+  .dummyDeleteBox {
+    width: 0px;
   }
-  .amountFormControlExtra{
-    padding-left:20px
+  .amountFormControlExtra {
+    padding-left: 10px !important;
   }
 }
