@@ -61,7 +61,7 @@ const ProductDetailComponent = ({ product, variations }) => {
         }
       } catch {}
     }
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, []);
 
   const addLineHandler = async (e) => {
