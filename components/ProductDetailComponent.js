@@ -24,12 +24,8 @@ import {
 import { useState, useEffect } from "react";
 import axios from "axios";
 import router from "next/router";
-import { faTimes, faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-
-
-
 
 const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
@@ -65,6 +61,7 @@ const ProductDetailComponent = ({ product, variations }) => {
         }
       } catch {}
     }
+    window.scrollTo(0, 0);
   }, []);
 
   const addLineHandler = async (e) => {
@@ -78,6 +75,10 @@ const ProductDetailComponent = ({ product, variations }) => {
   const createOrderHandler = async () => {
     const color_id = color == null ? -1 : color.id;
     await createOrder(color_id, amount, email, comment);
+  };
+
+  const isEmailDisabled = () => {
+    return custom_vars === null || custom_vars.length > 0;
   };
 
   return product == null || colors == null ? (
@@ -200,8 +201,20 @@ const ProductDetailComponent = ({ product, variations }) => {
             {custom_vars == null ||
             custom_vars.length <
               product.category.max_amount_of_lettering_items ? (
+              <div className={styles.addNewPDiv}>
+                <p className={styles.addNewP}>
+                  * Please select and add a new line of lettering
+                </p>
+              </div>
+            ) : (
+              <div></div>
+            )}
+
+            {custom_vars == null ||
+            custom_vars.length <
+              product.category.max_amount_of_lettering_items ? (
               <div className={styles.productDivAdd}>
-                <InputGroup className={styles.inputGroup}>
+                <InputGroup className={styles.inputGroupAdd}>
                   <div className={styles.dummyDeleteBox}></div>
                   <select
                     className={`form-select ${styles.categoryDropdown}`}
@@ -240,7 +253,7 @@ const ProductDetailComponent = ({ product, variations }) => {
 
                   <FormControl
                     type="search"
-                    placeholder="Line of lettering ... "
+                    placeholder="... Write here! ... "
                     className={`mr-2 ${styles.categoryAddLettering}`}
                     aria-label="Search"
                     onChange={(e) => setDummyVar(e.target.value)}
@@ -251,7 +264,11 @@ const ProductDetailComponent = ({ product, variations }) => {
                       addLineHandler(e);
                     }}
                   >
-                    +
+                    <FontAwesomeIcon
+                      className={styles.xTimesIcon}
+                      size="1x"
+                      icon={faPlus}
+                    />
                   </Button>
                 </InputGroup>
               </div>
@@ -263,7 +280,9 @@ const ProductDetailComponent = ({ product, variations }) => {
               className={`${styles.formGroupSpan} ${styles.amountFormControlExtra}`}
             >
               <div className={styles.dummyDeleteBox}></div>
-              <InputGroup.Text className={styles.inputGroupText}>
+              <InputGroup.Text
+                className={`${styles.inputGroupText} ${styles.inputGroupTextAmount}`}
+              >
                 Amount
               </InputGroup.Text>
               <FormControl
@@ -276,42 +295,79 @@ const ProductDetailComponent = ({ product, variations }) => {
               ></FormControl>
             </InputGroup>
           </Form>
+
           <Form className={styles.orderInfoForm}>
             <div className={styles.productDivAdd}>
               <InputGroup className={styles.formGroup}>
                 <div className={styles.dummyDeleteBox}></div>
-                <FormControl
-                  className={`${styles.formControl} ${styles.commentFormControl}`}
-                  autoFocus
-                  as="textarea"
-                  placeholder="Comments ..."
-                  value={comment}
-                  onChange={(e) => setComment(e.target.value)}
-                ></FormControl>
+                {custom_vars === null || custom_vars.length === 0 ? (
+                  <FormControl
+                    disabled
+                    className={`${styles.formControl} ${styles.commentFormControl}`}
+                    autoFocus
+                    as="textarea"
+                    placeholder="Comments ..."
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                  ></FormControl>
+                ) : (
+                  <FormControl
+                    className={`${styles.formControl} ${styles.commentFormControl}`}
+                    autoFocus
+                    as="textarea"
+                    placeholder="Comments ..."
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                  ></FormControl>
+                )}
               </InputGroup>
 
               <InputGroup className={styles.formGroup}>
-                {/* <Form.Label className={styles.formLabel}>Email</Form.Label> */}
                 <div className={styles.dummyDeleteBox}></div>
-                <FormControl
-                  className={`${styles.formControl} ${styles.emailFormControl}`}
-                  autoFocus
-                  placeholder="Email ..."
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                ></FormControl>
+                {custom_vars === null || custom_vars.length === 0 ? (
+                  <FormControl
+                    disabled
+                    className={`${styles.formControl} ${styles.emailFormControl}`}
+                    autoFocus
+                    placeholder="Email ..."
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  ></FormControl>
+                ) : (
+                  <FormControl
+                    className={`${styles.formControl} ${styles.emailFormControl}`}
+                    autoFocus
+                    placeholder="Email ..."
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  ></FormControl>
+                )}
               </InputGroup>
             </div>
             <div className={styles.orderNowButtonDiv}>
-              <Button
-                onClick={(e) => {
-                  createOrderHandler();
-                }}
-                className={styles.orderNowButton}
-              >
-                ORDER NOW
-              </Button>
+              {custom_vars === null || custom_vars.length === 0 ? (
+                <Button
+                  disabled
+                  variant='danger'
+                  onClick={(e) => {
+                    createOrderHandler();
+                  }}
+                  className={styles.orderNowButton}
+                >
+                  * Add a line of lettering before ordering
+                </Button>
+              ) : (
+                <Button
+                  onClick={(e) => {
+                    createOrderHandler();
+                  }}
+                  className={styles.orderNowButton}
+                >
+                  ORDER NOW
+                </Button>
+              )}
             </div>
           </Form>
         </Col>
