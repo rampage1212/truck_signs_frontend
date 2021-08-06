@@ -206,7 +206,7 @@ const ProductDetailComponent = ({ product, variations }) => {
                 </p>
               </div>
             ) : (
-              <div></div>
+              <div>{custom_vars == null?"Null":custom_vars.length} </div>
             )}
 
             {custom_vars == null ||
