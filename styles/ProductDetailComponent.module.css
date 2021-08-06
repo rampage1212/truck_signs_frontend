@@ -18,6 +18,8 @@
   border: 1px solid #808285;
 }
 
+
+
 .productImage {
   height: 100%;
   width: 100%;
@@ -199,6 +201,7 @@
 }
 
 .categoryAddLettering {
+  font-weight: 300 !important;
   border-color: #808285;
 }
 
@@ -292,10 +295,6 @@
   text-align: center;
 }
 
-.orderNowButtonDiv:disabled{
-  /* background-color: ; */
-}
-
 .orderNowButton {
   border-color: #bf1e2d;
   background-color: #bf1e2d;
@@ -335,4 +334,40 @@
     margin-left: 0px !important;
     padding-left: 10px !important;
   }
+
+  .categoryDropdown {
+    font-size: 16px;
+  }
+
+  .option {
+    font-size: 16px;
+  }
+
+  .categoryAddLettering {
+    font-size: 16px;
+  }
+}
+
+
+@media screen and (min-width: 758px) and (max-width: 1024px) {
+  .productImageColWrapper {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 300px
+  }
+  
+  .productImageDiv {
+    height: 300px;
+    width: 300px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    border: 1px solid #808285;
+  }
+
+  .amountFormControlExtra {
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+  }
+
 }
