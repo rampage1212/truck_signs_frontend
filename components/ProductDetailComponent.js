@@ -77,10 +77,6 @@ const ProductDetailComponent = ({ product, variations }) => {
     await createOrder(color_id, amount, email, comment);
   };
 
-  const isEmailDisabled = () => {
-    return custom_vars === null || custom_vars.length > 0;
-  };
-
   return product == null || colors == null ? (
     <div></div>
   ) : (
@@ -350,7 +346,7 @@ const ProductDetailComponent = ({ product, variations }) => {
               {custom_vars === null || custom_vars.length === 0 ? (
                 <Button
                   disabled
-                  variant='danger'
+                  variant="danger"
                   onClick={(e) => {
                     createOrderHandler();
                   }}

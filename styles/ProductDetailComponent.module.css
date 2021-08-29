@@ -132,7 +132,8 @@
 .listGroupItem {
   width: 100%;
   margin: 6px;
-  height: 40px;
+  height: max(40px, fit-content);
+  align-items: center;
   background-color: white;
   border: 1px solid #808285;
   color: #808285;
@@ -170,6 +171,9 @@
 
 .spanListGroupItem {
   background-color: white;
+  align-items: center !important;
+  align-content: center !important;
+  align-self:center !important;
   border-radius: 0px !important;
   border: 0px;
   border-right: 1px solid #808285;
@@ -180,8 +184,19 @@
 }
 
 .pListGroupItem {
+  align-items: center !important;
+  align-content: center !important;
+  align-self:center !important;
   border-radius: 0px !important;
   border: 0px;
+}
+
+.variationsP{
+  padding: 0px !important;
+  margin:0px !important;
+  align-items: center !important;
+  align-content: center !important;
+  align-self:center !important;
 }
 
 .inputGroup {
