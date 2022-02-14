@@ -112,7 +112,7 @@
   margin-bottom: 0px;
   padding-bottom: 0px;
   font-size: 18px;
-  color: crimson;
+  color: #960e1b;
 }
 
 .inputGroupAdd {
@@ -149,24 +149,27 @@
   margin: 6px;
 }
 
-.deleteBox .xTimesIcon {
+.deleteBox > .xTimesIconBox > .xTimesIcon {
   display: none;
 }
 
-.deleteBox:hover .xTimesIcon {
+.deleteBox:hover > .xTimesIconBox > .xTimesIcon {
   display: inline-block;
 }
 
 .xTimesIconBox {
   margin-left: auto !important;
   margin-right: auto !important;
-  height: min-content;
-  width: min-content;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 
 .xTimesIcon {
-  color: #bf1e2d;
+  color: #960e1b;
   margin-top: 3px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .spanListGroupItem {

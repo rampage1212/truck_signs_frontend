@@ -23,6 +23,8 @@ import router from "next/router";
 
 const NextNavbar = () => {
   return (
+    <div>
+
     <Navbar
       collapseOnSelect
       expand="lg"
@@ -41,8 +43,8 @@ const NextNavbar = () => {
           <Image
             src={truckLogo}
             alt="Logo not available"
-            height="150px"
-            width="200px"
+            height="200px"
+            width="250px"
           ></Image>
         </Navbar.Brand>
 
@@ -75,6 +77,7 @@ const NextNavbar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </div>
   );
 };
 

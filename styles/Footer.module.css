@@ -5,7 +5,8 @@
   text-align: center;
   margin-top: 50px;
   height: 200px;
-  width: 100vw !important;
+  width: 100% !important;
+  /* max-width: 90vw; */
   margin-left: 0px !important;
   margin-right: 0px !important;
   padding: 0px;

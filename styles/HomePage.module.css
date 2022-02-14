@@ -1,16 +1,10 @@
 .container {
-  width: 100vw;
-  font-weight: 300 !important;
-}
-
-.truckImg {
-  height: 500px;
-  width: 100%;
+  font-weight: 400 !important;
 }
 
 .bannerContainer {
   background-color: #bf1e2d;
-  width: 100% !important;
+  width: 90% !important;
   height: fit-content !important;
   text-align: center !important;
   font-family: Athena;
@@ -20,19 +14,34 @@
 
 .banner {
   margin: auto;
-  padding: 10px;
+  padding: 20px;
   color: white;
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 3rem;
   align-self: center;
 }
 
+.truckImg {
+  height: 500px;
+  width: 100%;
+}
+
+.br{
+  /* margin-top: 5px; */
+  height: 0px;
+  /* background: rgba(0,0,0,0.2);
+  width: 95% !important;
+  margin-left: auto !important;
+  margin-right: auto !important */
+}
+
+
 .uploadLogoContainer {
-  background-color: black;
+  background-color: rgba(0,0,0,0.9);;
   color: white;
   margin-top: 50px;
   text-align: center;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
+  width: 100%;
 }
 
 .uploadLogoHeader {
@@ -77,14 +86,16 @@
 }
 
 .cardRow {
-  margin-left: 50px;
-  margin-right: 50px;
-  font-weight: 300 !important;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 90vw;
+  font-weight: 400 !important;
 }
 
 .cardCol {
   padding-bottom: 50px;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
 }
 
 .card {
@@ -92,7 +103,8 @@
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
+  min-height: 300px;
 }
 
 .cardIcon {
@@ -108,25 +120,26 @@
   border-color: white;
 }
 
-.cardBody {
-  color: black;
-  font-weight: 300 !important;
-}
-
 .cardTitle {
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   color: #1b75bc;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 10px;
   margin-bottom: 0px !important;
   padding-bottom: 0px !important;
 }
 
+.cardBody {
+  color: black;
+  font-weight: 400 !important;
+  padding-top: 0px !important;
+}
+
 .testimonialsContainer {
   text-align: center;
   color: black;
-  width: 100vw !important;
-  font-weight: 300 !important;
+  width: 100% !important;
+  font-weight: 400 !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -149,7 +162,7 @@
 }
 
 .testimonialsRow{
-  width: 100vw !important;
+  width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center;
@@ -175,7 +188,7 @@
   height:  min(300px, 80vw);
   width:  min(400px, 80vw);
   margin-left: auto !important;
-  margin-right: auto !important;
+  margin-right: auto !important
 }
 
 .testimonialsFooter {
@@ -186,4 +199,7 @@
   width: min(400px, 80vw);
   margin-left: auto !important;
   margin-right: auto !important;
+  text-align: left !important;
+  padding-left: 10px;
 }
+

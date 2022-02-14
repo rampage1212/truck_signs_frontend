@@ -6,19 +6,29 @@
 }
 
 .brand, .linkItem{
-    color:black !important;
-
+    color: rgba(0,0,0,0.75) !important;
 }
 
 .linkItem{
     padding-left:50px !important;
     padding-right:50px !important;
     align-self: center;
-    border-bottom:0px solid royalblue;
+    text-decoration: none !important;
     font-weight: 300;
     font-size: 24px;
 }
 
-.linkItem:hover{
-    border-bottom:5px solid royalblue;
+.linkItem:after{
+    content: " ";
+    display: block;
+    transform: scaleX(0);
+    transition: transform 250ms ease-out;
+    padding-bottom: 5px;
+    border-bottom: 5px solid royalblue !important;
 }
+
+
+.linkItem:hover:after{
+    transform: scaleX(0.5);
+  }
+

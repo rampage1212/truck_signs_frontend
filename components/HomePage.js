@@ -54,6 +54,7 @@ const HomePage = () => {
           className={styles.truckImg}
           alt="Truck Sign Vinyl"
         ></Image>
+        
       </Container>
       <LogoGrid />
       <div className={styles.uploadLogoContainer}>
@@ -66,7 +67,6 @@ const HomePage = () => {
           welcome!
         </p>
 
-        {/* NOTE Upload file */}
 
         <label for="uploadButton" className={styles.uploadButton}>
           UPLOAD NOW

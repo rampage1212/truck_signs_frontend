@@ -3,6 +3,7 @@ import Image from "next/image";
 import style from "../styles/Home.module.css";
 import NextNavbar from "../components/Navbar";
 import HomePage from "../components/HomePage";
+import { Container } from "react-bootstrap";
 
 
 export default function Home() {
