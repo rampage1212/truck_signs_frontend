@@ -1,8 +1,5 @@
-## Extra Packages installed:
-- axios
-- react-bootstrap
-- bootstrap 5
-- cloudinary-react
-- @fortawesome/react-fontawesome
+# Truck Signs
 
+This is the fronted of the Webapp Truck Signs for buying pre-designed truck signs.
 
+![image info](./public/images/website.jpg)
