@@ -177,7 +177,7 @@ const HomePage = () => {
                     alt="Truck Sign Vinyl testimonial"
                     className={styles.testimonialsImg}
                     src={tes.image}
-                  ></img>
+                  />
                   <div className={styles.testimonialsFooter}>
                     <p className={styles.testimonialsP}>{tes.text}</p>
                   </div>

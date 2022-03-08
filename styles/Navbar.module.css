@@ -32,3 +32,10 @@
     transform: scaleX(0.5);
   }
 
+  @media screen and (max-width:578px){
+      .brand_img{
+          width: 20px !important;
+          height: 20px !important;
+      }
+  }
+

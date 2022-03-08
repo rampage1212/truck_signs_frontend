@@ -3,6 +3,11 @@
     font-weight: 400 !important;
 }
 
+.row{
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .productCol {
   display: flex;
   flex-direction: column;
@@ -46,14 +51,39 @@
 }
 
 @media screen and (max-width: 758px) {
+  .productGridContainer{
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   .productWrapper {
     margin-left: auto !important;
     margin-right: auto !important;
+    max-width: 300px !important;
     width: 350px;
   }
 
   .productImage {
     height: 200px;
     width: 350px;
+  }
+
+  .crimsonSpan {
+    padding-left: 5px;
+  }
+  
+  .crimsonSpanPrice {
+    font-size: 24px;
+    padding-right: 5px;
+  }
+
+  .p{
+    padding-left: 10px;
+  }
+
+  .productImage{
+    max-width: 300px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }

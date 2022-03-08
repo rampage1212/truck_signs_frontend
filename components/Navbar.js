@@ -23,7 +23,6 @@ import router from "next/router";
 
 const NextNavbar = () => {
   return (
-    <div>
 
     <Navbar
       collapseOnSelect
@@ -33,7 +32,6 @@ const NextNavbar = () => {
       className={styles.navbar}
     >
       <Container>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Brand
           className={`navbar-brand d-lg-none ${styles.smallBrand}`}
@@ -43,13 +41,16 @@ const NextNavbar = () => {
           <Image
             src={truckLogo}
             alt="Logo not available"
-            height="200px"
-            width="250px"
-          ></Image>
+            height="100px"
+            width="150px"
+            className={styles.brand_img}
+          />
         </Navbar.Brand>
 
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className={styles.navbar_nav} className="m-auto">
+          <Nav className={`m-auto ${styles.navbar_nav}`}>
             <Nav.Link className={styles.linkItem} href="/how-to">
               HOW TO
             </Nav.Link>
@@ -65,7 +66,8 @@ const NextNavbar = () => {
                 alt="Logo not available"
                 height="150px"
                 width="200px"
-              ></Image>
+                className={styles.brand_img}
+              />
             </Navbar.Brand>
             <Nav.Link className={styles.linkItem} href="/prices">
               PRICES
@@ -77,7 +79,6 @@ const NextNavbar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    </div>
   );
 };
 

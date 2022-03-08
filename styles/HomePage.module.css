@@ -26,12 +26,7 @@
 }
 
 .br{
-  /* margin-top: 5px; */
   height: 0px;
-  /* background: rgba(0,0,0,0.2);
-  width: 95% !important;
-  margin-left: auto !important;
-  margin-right: auto !important */
 }
 
 
@@ -203,3 +198,35 @@
   padding-left: 10px;
 }
 
+
+@media screen and (max-width: 578px){
+  .bannerContainer {
+    width: 100% !important;
+  }
+  
+  .banner {
+    font-size: 2rem;
+  }
+
+  .uploadLogoHeader, .uploadLogoPBold, .uploadLogoP {
+    width: 90%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+  }
+
+  .uploadButton {
+    margin-bottom: 50px;
+  }
+
+  .testimonialsContainer, .testimonialsHeader{
+    width: 90%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+  }
+
+  .testimonialsHeader {
+    font-size: 40px;
+  }
+}

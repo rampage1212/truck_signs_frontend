@@ -1,11 +1,18 @@
+.row{
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .videoDiv {
     width: 80%;
     margin-left: auto !important;
     margin-right: auto !important;
+    display:none !important;
 }
 
 .video{
     width: 100%;
+    display:none !important;
 }
 
 .infoDiv {
@@ -18,4 +25,26 @@
 .header {
   font-size: 24px;
   font-weight: 300 !important;
+}
+
+@media screen and (max-width:758px){
+  .row{
+   /* margin-top: 50px; */
+  }
+
+  .videoDiv {
+    width: 100%;
+  }
+
+  .infoDiv {
+    width: 90%;
+    margin-top: 50px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: justify !important;
+  }
+
+  .header{
+    margin-bottom: 25px;
+  }
 }

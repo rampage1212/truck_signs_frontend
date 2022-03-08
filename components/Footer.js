@@ -40,6 +40,12 @@ const Footer = () => {
             Contact us at Signsfortrucks@gmail.com
           </p>
         </Row>
+
+        <Row className={styles.developer_row}>
+          <p className={styles.p}>
+            Developed by Cecilia Fernandez Aguilera
+          </p>
+        </Row>
     </footer>
   );
 };

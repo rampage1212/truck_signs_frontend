@@ -4,9 +4,8 @@
   font-weight: 300 !important;
   text-align: center;
   margin-top: 50px;
-  height: 200px;
+  height: 300px;
   width: 100% !important;
-  /* max-width: 90vw; */
   margin-left: 0px !important;
   margin-right: 0px !important;
   padding: 0px;
@@ -18,31 +17,34 @@
   justify-content: center;
   width: 100vw;
   margin: 0px;
+  margin-top: 25px;
   padding: 0px;
+}
+
+.developer_row{
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+  width: max-content;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 758px) {
   .footerWrapper {
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
     margin-left: auto !important;
     margin-right: auto !important;
     justify-content: center;
   }
 
   .footer {
-    background-color: #bf1e2d;
-    color: white;
-    font-weight: 300 !important;
-    text-align: center;
-    margin-top: 50px;
-    height: 300px;
+    height: 500px !important;
     width: 100vw !important;
     position: relative;
     bottom: 0;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    padding: 0px;
+    margin-bottom: 0px !important;
   }
 
   .footerLink,
