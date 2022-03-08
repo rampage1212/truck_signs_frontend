@@ -55,7 +55,7 @@ const PaymentForm = ({ order }) => {
   ) : (
     <Container className={styles.orderDetailContainer}>
       <Form className={styles.form}>
-        <Row>
+        <Row className={styles.row}>
           <Col className={styles.col} xs={6}>
             <InputGroup className={styles.formGroupLeftCol}>
               {/* <Form.Label className={styles.formLabel}>First Name</Form.Label> */}

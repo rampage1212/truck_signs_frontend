@@ -5,6 +5,11 @@
     font-weight: 300 !important;
 }
 
+.row{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 
 .formGroup{
     width: 100%;
@@ -70,4 +75,11 @@
 
 .crimsonSpan{
     color:#bf1e2d;
+}
+
+@media screen and (max-width: 578px){
+    .form{
+        width: 90%;
+        max-width: 600px;
+    }
 }

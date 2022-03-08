@@ -35,7 +35,7 @@ const HowToComponent = () => {
   return (
     <>
       <Row className={styles.row}>
-        <Col className={styles.videoCol} xs={12} sm={12} md={6} lg={6}>
+        {/* <Col className={styles.videoCol} xs={12} sm={12} md={6} lg={6}>
           <div className={styles.videoDiv}>
             <CloudinaryContext
               cloud_name="trucksigns17"
@@ -52,8 +52,8 @@ const HowToComponent = () => {
               </div>
             </CloudinaryContext>
           </div>
-        </Col>
-        <Col className={styles.infoCol} xs={12} sm={12} md={6} lg={6}>
+        </Col> */}
+        <Col className={styles.infoCol} xs={12} sm={12} md={12} lg={12}>
           <div className={styles.infoDiv}>
             <h1 className={styles.header}>
               How to install vinyl graphics on the truck

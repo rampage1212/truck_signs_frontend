@@ -1,6 +1,13 @@
 .productGrid {
   margin-top: 50px;
   font-weight: 300 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.productRow{
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .productImageColWrapper {
@@ -387,5 +394,30 @@
     margin-left: 0px !important;
     padding-left: 0px !important;
   }
+}
 
+@media screen and (max-width: 578px){
+  .vinylInfo{
+    width: 90% !important;
+    margin-top: 20px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: justify;
+  }
+
+  .productDiv{
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .productDivAdd{
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .amountFormControlExtra {
+    padding-left: 0px !important;
+  }
 }

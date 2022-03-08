@@ -16,15 +16,21 @@
 }
 
 .infoDiv {
-  width: 80%;
+  width: 50%;
+  margin-top: 20px;
   margin-left: auto !important;
   margin-right: auto !important;
+  text-align: justify;
   font-weight: 400 !important;
 }
 
 .header {
   font-size: 24px;
   font-weight: 300 !important;
+  text-align:center;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 25px;
 }
 
 @media screen and (max-width:758px){
