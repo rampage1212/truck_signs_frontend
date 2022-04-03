@@ -3,39 +3,31 @@ import Image from "next/image";
 import styles from "../../../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProductDetailComponent from "../../../components/ProductDetailComponent";
 import router from "next/router";
 import { useRouter } from "next/router";
+import ProductVariationComponent from "../../../components/ProductVariationComponent";
+import { useProduct } from "../../../context/ProductContext";
 
 const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
 export default function ProductDetail() {
   const router = useRouter();
   const { id } = router.query;
-  const [product, setProduct] = useState(null);
-  const [variations, setVariations] = useState(null);
-  const [arr, setArr] = useState(null);
 
-  // NOTE Init
-  useEffect(async () => {
-    // LINK product variation details
+  const { product, fetchProductByID } = useProduct();
 
-    var product_id = null;
-    if (id != undefined && id != null) {
-      window.localStorage.setItem("product_id", id);
-      product_id = id;
-    } else {
-      product_id = window.localStorage.getItem("product_id");
+  useEffect(() => {
+    if(id != null && id != undefined){
+      fetchProductByID(id);
     }
+  }, [])
 
-    await getProduct(product_id, setProduct);
+  useEffect(() => {
+    if(id != null && id != undefined){
+    fetchProductByID(id);
+    }
+  },[id])
 
-    await getVariations(setVariations);
-
-    // LINK Array for amount of product this is a fix for bug
-    var temp_arr = Array(100).fill(1);
-    setArr(temp_arr);
-  }, []);
 
   // NOTE Components
   return product == undefined || product == null ? (
@@ -70,48 +62,10 @@ export default function ProductDetail() {
       </Head>
 
       <main className={styles.main}>
-        <ProductDetailComponent product={product} variations={variations} />
+        {/* <ProductDetailComponent product={product} variations={variations} /> */}
+        <ProductVariationComponent product={product} />
       </main>
     </div>
   );
 }
 
-// NOTE Helpers
-
-const getProduct = async (id, setProduct) => {
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-
-  const product_url = domain + `truck-signs/product-detail/${id}/`;
-  axios
-    .get(product_url, config)
-    .then(async (res) => {
-      const product = await res.data;
-      setProduct(product);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
-const getVariations = async (setVariations) => {
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-
-  const variations_url = domain + `truck-signs/lettering-item-categories/`;
-  axios
-    .get(variations_url, config)
-    .then(async (res) => {
-      const product = await res.data;
-      setVariations(product);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};

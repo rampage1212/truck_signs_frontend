@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "../../../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProductDetailComponent from "../../../components/ProductDetailComponent";
 import router from "next/router";
 import { useRouter } from "next/router";
 import PaymentForm from "../../../components/PaymentForm";

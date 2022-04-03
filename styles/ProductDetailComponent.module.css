@@ -40,8 +40,8 @@
 }
 
 .colorBox {
-  height: 40px;
-  width: 50px;
+  height: 50px;
+  width: 60px;
   border: 1px solid #808285;
   margin: 6px;
 }
@@ -52,13 +52,13 @@
 }
 
 .dropdownColorToggle {
-  height: 40px;
+  height: 50px;
   width: 100%;
   background-color: white;
   border: 1px solid #808285;
   color: black;
   text-align: start;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300 !important;
   border-radius: 0px !important;
   display: flex;
@@ -70,35 +70,36 @@
 .dropdownColorToggle:focus {
   background-color: white;
   color: black;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300 !important;
 }
 .dropdownColorToggle:hover {
   background-color: white;
   color: black;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300 !important;
 }
 
 .dropdownColorToggle::after {
   background-color: white;
   color: black;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300 !important;
 }
 
 .dropdownItemColor {
   height: 100%;
   width: 90%;
+  margin-top: 5px;
   margin-left: auto !important;
   margin-right: auto !important;
   border: 1px solid transparent;
-  border-radius: 15px;
-  margin-top: 5px;
+  font-size: 24px;
+  border-radius: 20px;
 }
 
 .option {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300 !important;
 }
 
@@ -112,20 +113,6 @@
   text-align: center;
   margin-bottom: 0px;
   padding-bottom: 0px;
-}
-
-.addNewP {
-  margin-top: 20px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  font-size: 18px;
-  color: #960e1b;
-}
-
-.inputGroupAdd {
-  max-width: 500px;
-  margin-left: auto !important;
-  margin-right: auto !important;
 }
 
 .productDivAdd {
@@ -147,36 +134,6 @@
   text-align: start;
   font-size: 20px;
   border-radius: 0px !important;
-}
-
-.deleteBox {
-  height: 40px;
-  width: 50px;
-  border: 1px solid #808285;
-  margin: 6px;
-}
-
-.deleteBox > .xTimesIconBox > .xTimesIcon {
-  display: none;
-}
-
-.deleteBox:hover > .xTimesIconBox > .xTimesIcon {
-  display: inline-block;
-}
-
-.xTimesIconBox {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
-
-.xTimesIcon {
-  color: #960e1b;
-  margin-top: 3px;
-  margin-left: auto !important;
-  margin-right: auto !important;
 }
 
 .spanListGroupItem {
@@ -226,8 +183,19 @@
 }
 
 .categoryAddLettering {
-  font-weight: 300 !important;
+  height: 50px !important;
+  margin-top: 15px !important;
+  border-radius: 0px !important;
   border-color: #808285;
+  font-size: 24px;
+  font-weight: 300 !important;
+}
+
+
+.categoryAddLettering::placeholder {
+  color: black;
+  font-size: 24px;
+  font-weight: 300 !important;
 }
 
 .searchButton {
@@ -276,12 +244,12 @@
 }
 
 .dummyDeleteBox {
-  height: 40px;
+  height: 50px;
   width: 52px;
 }
 
 .formControl {
-  height: 40px;
+  height: 50px;
   border-color: #808285;
   border-radius: 0px;
 }
@@ -292,12 +260,12 @@
 
 .commentFormControl::placeholder {
   color: black;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300 !important;
 }
 
 .commentFormControl:disabled{
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300 !important;
   /* background-color:#c12e2a; */
   opacity: 0.5;
@@ -305,19 +273,21 @@
 
 .emailFormControl::placeholder {
   color: black;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300 !important;
 }
 
 .emailFormControl:disabled{
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300 !important;
   opacity: 0.5;
 }
 
 .orderNowButtonDiv {
-  width: 100%;
-  text-align: center;
+  width: 80%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: start;
 }
 
 .orderNowButton {
@@ -326,6 +296,8 @@
   color: white;
   margin-top: 20px;
   border-radius: 0px;
+  font-size: 24px !important;
+  font-weight: 300 !important;
 }
 
 .orderNowButton:hover,

@@ -66,14 +66,20 @@
   padding-right: 10px !important;
 }
 
-.footerLink:hover,
-.footerLink:after,
-.footerLink:focus,
-.footerLink:active {
-  color: white !important;
-  font-weight: bold;
-  text-decoration: none;
+
+.footerLink:after{
+  content: " ";
+  display: block;
+  transform: scaleX(0);
+  transition: transform 250ms ease-out;
+  padding-bottom: 5px;
+  border-bottom: 3px solid white !important;
 }
+
+.footerLink:hover:after{
+  transform: scaleX(1);
+}
+
 
 .contactUsP {
   color: white !important;
