@@ -50,14 +50,14 @@ export default function OrderDetail() {
         />
         <meta
           property="og:url"
-          content={`https://truck-signs-frontend-nextjs.vercel.app/order/${order.id}/`}
+          content={`https://www.signsfortrucks.com/order/${order.id}/`}
         />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
 
         <link
           rel="canonical"
-          href={`https://truck-signs-frontend-nextjs.vercel.app/order/${order.id}/`}
+          href={`https://www.signsfortrucks.com/order/${order.id}/`}
         />
       </Head>
 

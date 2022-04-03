@@ -23,7 +23,7 @@ export default function OrderError() {
         />
         <meta
           property="og:url"
-          content="https://truck-signs-frontend-nextjs.vercel.app/order-error/"
+          content="https://www.signsfortrucks.com/order-error/"
         />
         <meta property="og:type" content="website" />
 
@@ -31,7 +31,7 @@ export default function OrderError() {
 
         <link
           rel="canonical"
-          href="https://truck-signs-frontend-nextjs.vercel.app/order-error/"
+          href="https://www.signsfortrucks.com/order-error/"
         />
       </Head>
 

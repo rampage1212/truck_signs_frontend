@@ -50,19 +50,18 @@ export default function ProductDetail() {
         />
         <meta
           property="og:url"
-          content={`https://truck-signs-frontend-nextjs.vercel.app/product/${id}/`}
+          content={`https://www.signsfortrucks.com/product/${id}/`}
         />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
 
         <link
           rel="canonical"
-          href={`https://truck-signs-frontend-nextjs.vercel.app/product/${id}/`}
+          href={`https://www.signsfortrucks.com/product/${id}/`}
         />
       </Head>
 
       <main className={styles.main}>
-        {/* <ProductDetailComponent product={product} variations={variations} /> */}
         <ProductVariationComponent />
       </main>
     </div>

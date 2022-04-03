@@ -19,7 +19,7 @@ export default function HowTo() {
         />
         <meta
           property="og:url"
-          content="https://truck-signs-frontend-nextjs.vercel.app/how-to/"
+          content="https://www.signsfortrucks.com/how-to/"
         />
         <meta property="og:type" content="website" />
         <meta
@@ -30,7 +30,7 @@ export default function HowTo() {
 
         <link
           rel="canonical"
-          href="https://truck-signs-frontend-nextjs.vercel.app/how-to/"
+          href="https://www.signsfortrucks.com/how-to/"
         />
       </Head>
 

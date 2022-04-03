@@ -23,12 +23,12 @@ export default function Home() {
         />
         <meta
           property="og:url"
-          content="https://truck-signs-frontend-nextjs.vercel.app/prices/"
+          content="https://www.signsfortrucks.com/prices/"
         />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
 
-        <link rel="canonical" href="https://truck-signs-frontend-nextjs.vercel.app/prices/" />
+        <link rel="canonical" href="https://www.signsfortrucks.com/prices/" />
 
       </Head>
 

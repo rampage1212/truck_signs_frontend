@@ -23,12 +23,12 @@ export default function OrderMade() {
         />
         <meta
           property="og:url"
-          content="https://truck-signs-frontend-nextjs.vercel.app/order-made/"
+          content="https://www.signsfortrucks.com/order-made/"
         />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
 
-        <link rel="canonical" href="https://truck-signs-frontend-nextjs.vercel.app/order-made/" />
+        <link rel="canonical" href="hhttps://www.signsfortrucks.com/order-made/" />
 
       </Head>
 

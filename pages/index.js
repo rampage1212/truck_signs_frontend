@@ -24,11 +24,11 @@ export default function Home() {
         />
         <meta
           property="og:url"
-          content="https://truck-signs-frontend-nextjs.vercel.app/"
+          content="https://www.signsfortrucks.com/"
         />
         <meta property="og:type" content="website" />
 
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <link
           rel="preload"
           href="/fonts/Athena/Athena.ttf"
@@ -62,7 +62,7 @@ export default function Home() {
 
         <link
           rel="canonical"
-          href="https://truck-signs-frontend-nextjs.vercel.app/"
+          href="https://www.signsfortrucks.com/"
         />
       </Head>
 
