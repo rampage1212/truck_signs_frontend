@@ -17,25 +17,40 @@
   flex-direction: column;
 }
 
+.logoImage_div{
+  height: 200px !important;
+  width: 200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+  border:1px solid #999e9f99 !important;
+}
+
 .logoImage {
-  height: 250px;
-  width: 250px;
-  border:0xp !important;
+  height: 200px !important;
+  width: 200px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center;
 }
 
-.orderLogoButton {
-  min-width: 100px;
-  max-width: 250px;
+.orderLogoButton_div{
+  min-width: 120px;
+  max-width: 200px !important;
   margin-top: 20px;
   margin-left: auto !important;
   margin-right: auto !important;
+  text-align: center !important;
+}
+
+.orderLogoButton {
+  height: 30px;
   color: white;
   background-color: #bf1e2d;
   border-color: #bf1e2d;
   border-radius: 0px;
+  padding-top: 5px;
+  font-family: "Acumin" !important;
 }
 
 .orderLogoButton:hover,
@@ -60,5 +75,18 @@
     margin-left: auto !important;
     margin-right: auto !important;
     text-align: center;
+  }
+
+  .orderLogoButton {
+    min-width: 100px;
+    max-width: 250px;
+    margin-top: 20px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    color: white;
+    background-color: #bf1e2d;
+    border-color: #bf1e2d;
+    border-radius: 0px;
+    font-size: 1.2rem !important;
   }
 }

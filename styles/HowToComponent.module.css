@@ -47,10 +47,13 @@
     margin-top: 50px;
     margin-left: auto !important;
     margin-right: auto !important;
+    font-size: 1.2rem !important;
     text-align: justify !important;
   }
 
   .header{
     margin-bottom: 25px;
+    font-size: 1.5rem !important;
+    font-weight: 400 !important;
   }
 }

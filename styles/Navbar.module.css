@@ -1,8 +1,7 @@
 .navbar{
     background-color:white !important;
     height:fit-content;
-    /* font-family: Bench-Nine; */
-    font-family:Acumin;
+    font-family:"Acumin";
 }
 
 .brand, .linkItem{
@@ -33,6 +32,32 @@
   }
 
   @media screen and (max-width:578px){
+    .navbar_nav{
+        /* background-color:royalblue !important; */
+        /* color: royalblue !important; */
+        border: 1.5px solid silver;
+        border-radius: 10px !important;
+    }
+
+    .linkItem{
+        text-align: left !important;
+        justify-content:end !important;
+    }
+
+    .linkItem:after{
+        content: " ";
+        display: block;
+        transform: scaleX(0);
+        transition: transform 250ms ease-out;
+        padding-bottom: 5px;
+        border-bottom: 3px solid royalblue !important;
+    }
+
+    
+    .linkItem:hover:after{
+        transform: scaleX(1);
+    }
+
       .brand_img{
           width: 20px !important;
           height: 20px !important;

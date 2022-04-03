@@ -87,9 +87,11 @@ export const ProductProvider = ({ children }) => {
         }
     }, [product_id])
 
-    const fetchProductByID = (id) => {
+    const fetchProductByID = async (id) => {
         if(id != null){
             window.localStorage.setItem("product_id", id);
+            const temp_product = await getCurrentProduct()
+            setProduct(temp_product['product']);
         }
     }
 

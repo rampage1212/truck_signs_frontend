@@ -27,9 +27,13 @@ import router from "next/router";
 import { faTimes, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { useProduct } from "../context/ProductContext";
+
 const domain = process.env.NEXT_PUBLIC_API_DOMAIN_NAME;
 
-const ProductVariationComponent = ({ product }) => {
+const ProductVariationComponent = () => {
+    const { product, fetchProductByID } = useProduct();
+
     const [colors, setColors] = useState(null);
     const [color, setColor] = useState(null);
     const [company_name, setCompanyName] = useState(null);
@@ -40,12 +44,13 @@ const ProductVariationComponent = ({ product }) => {
     const [truck_number, setTruckNumber] = useState(null);
     const [email, setEmail] = useState("");
     const [comment, setComment] = useState("");
+    
 
     useEffect(async () => {
         getColors(setColors);
         setColor(product.product_color_default);
         window.scrollTo(0, 0);
-    }, []);
+    }, [product]);
 
 
 

@@ -54,7 +54,7 @@ const HomePage = () => {
           className={styles.truckImg}
           alt="Truck Sign Vinyl"
         ></Image>
-        
+
       </Container>
       <LogoGrid />
       <div className={styles.uploadLogoContainer}>
@@ -83,13 +83,16 @@ const HomePage = () => {
         <Row className={styles.cardRow}>
           <Col className={styles.cardCol} xs={12} sm={12} md={4} lg={4}>
             <Card className={styles.card}>
-              <Image
-                className={styles.cardIcon}
-                src={truckShippingIcon}
-                alt="Truck Sign Vinyl Shipping Icon"
-                height={50}
-                width={50}
-              ></Image>
+              <div className={styles.cardShippingIcon_div}>
+                <Image
+                  className={styles.cardShippingIcon}
+                  src={truckShippingIcon}
+                  alt="Truck Sign Vinyl Shipping Icon"
+                  // height={70}
+                  // width={70}
+                  width="100%" height="100%" layout="responsive" objectFit="contain"
+                />
+              </div>
               <Card.Header className={styles.cardHeader}>
                 Free Shipping Over $50
                 <Card.Title className={styles.cardTitle}>
@@ -107,13 +110,15 @@ const HomePage = () => {
 
           <Col className={styles.cardCol} xs={12} sm={12} md={4} lg={4}>
             <Card className={styles.card}>
-              <Image
-                className={styles.cardIcon}
-                src={watchIcon}
-                alt="Truck Sign Vinyl Watch Icon"
-                height={50}
-                width={50}
-              ></Image>
+              <div className={styles.cardIcon_div}>
+                <Image
+                  className={styles.cardIcon}
+                  src={watchIcon}
+                  alt="Truck Sign Vinyl Watch Icon"
+                  height={50}
+                  width={50}
+                />
+              </div>
               <Card.Header className={styles.cardHeader}>
                 Same Day Production
                 <Card.Title className={styles.cardTitle}>
@@ -131,13 +136,15 @@ const HomePage = () => {
 
           <Col className={styles.cardCol} xs={12} sm={12} md={4} lg={4}>
             <Card className={styles.card}>
-              <Image
-                className={styles.cardIcon}
-                src={settingsIcon}
-                alt="Truck Sign Apply Vinyl Icon"
-                height={50}
-                width={50}
-              ></Image>
+              <div className={styles.cardIcon_div}>
+                <Image
+                  className={styles.cardIcon}
+                  src={settingsIcon}
+                  alt="Truck Sign Apply Vinyl Icon"
+                  height={50}
+                  width={50}
+                />
+              </div>
               <Card.Header className={styles.cardHeader}>
                 Easy to Install
                 <Card.Title className={styles.cardTitle}>

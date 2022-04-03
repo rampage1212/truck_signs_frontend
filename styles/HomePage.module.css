@@ -4,7 +4,7 @@
 
 .bannerContainer {
   background-color: #bf1e2d;
-  width: 90% !important;
+  width: 100% !important;
   height: fit-content !important;
   text-align: center !important;
   font-family: Athena;
@@ -62,11 +62,13 @@
   color: white;
   border-color: #bf1e2d;
   border-radius: 0px;
-  width: 130px;
-  height:30px;
+  width: 150px;
+  height: 40px;
   padding-top: 3px;
   margin-top: 20px;
   margin-bottom: 20px;
+  padding-top: 10px !important;
+  font-family: "Acumin" !important;
 }
 
 .uploadButton:hover,
@@ -102,23 +104,48 @@
   min-height: 300px;
 }
 
+.cardIcon_div{
+  height: 50px !important;
+  width: 50px !important;
+  margin-top: 25px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+  position: 'relative';
+}
+
+.cardShippingIcon_div{
+  height: 60px !important;
+  width: 60px !important;
+  margin-top: 25px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+  position: 'relative';
+}
+
 .cardIcon {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
+}
+
+.cardShippingIcon{
+  height: 70px !important;
+  width: 70px !important;
 }
 
 .cardHeader {
   background-color: white;
   text-align: center;
   color: #bf1e2d;
-  font-size: 20px;
+  font-size: 24px !important;
   border-color: white;
 }
 
 .cardTitle {
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   color: #1b75bc;
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 10px;
   margin-bottom: 0px !important;
   padding-bottom: 0px !important;
@@ -126,6 +153,7 @@
 
 .cardBody {
   color: black;
+  font-size: 20px !important;
   font-weight: 400 !important;
   padding-top: 0px !important;
 }
@@ -145,19 +173,20 @@
   margin-bottom: 0px !important;
   padding-bottom: 0px !important;
   font-family: Athena;
-  font-size: 60px;
+  font-size: 100px;
 }
 
 .testimonialsP {
   margin: 0px !important;
   padding: 0px !important;
-  font-size: 20px;
+  font-size: 30px;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
 .testimonialsRow{
   width: 100% !important;
+  margin-top: 25px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center;
@@ -180,8 +209,8 @@
 }
 
 .testimonialsImg {
-  height:  min(300px, 80vw);
-  width:  min(400px, 80vw);
+  height:  min(550px, 80vw);
+  width:  min(700px, 80vw);
   margin-left: auto !important;
   margin-right: auto !important
 }
@@ -189,13 +218,21 @@
 .testimonialsFooter {
   background-color: black;
   color: white;
-  font-weight: 300 !important;
-  height: 30px;
-  width: min(400px, 80vw);
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  height: 50px;
+  width: min(700px, 80vw);
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: left !important;
+  align-items: baseline !important;
   padding-left: 10px;
+}
+
+.testimonialsP{
+  align-self: baseline !important;
+  line-height: 50px !important;
+  font-size: 20px !important;
 }
 
 
@@ -216,7 +253,10 @@
   }
 
   .uploadButton {
+    height: 50px !important;
     margin-bottom: 50px;
+    padding-top: 10px !important;
+    font-size: 1.2rem !important;
   }
 
   .testimonialsContainer, .testimonialsHeader{

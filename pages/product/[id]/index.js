@@ -14,7 +14,7 @@ export default function ProductDetail() {
   const router = useRouter();
   const { id } = router.query;
 
-  const { product, fetchProductByID } = useProduct();
+  const {fetchProductByID } = useProduct();
 
   useEffect(() => {
     if(id != null && id != undefined){
@@ -30,7 +30,7 @@ export default function ProductDetail() {
 
 
   // NOTE Components
-  return product == undefined || product == null ? (
+  return id == undefined || id == null ? (
     <div></div>
   ) : (
     <div className={styles.container}>
@@ -50,20 +50,20 @@ export default function ProductDetail() {
         />
         <meta
           property="og:url"
-          content={`https://truck-signs-frontend-nextjs.vercel.app/product/${product.id}/`}
+          content={`https://truck-signs-frontend-nextjs.vercel.app/product/${id}/`}
         />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
 
         <link
           rel="canonical"
-          href={`https://truck-signs-frontend-nextjs.vercel.app/product/${product.id}/`}
+          href={`https://truck-signs-frontend-nextjs.vercel.app/product/${id}/`}
         />
       </Head>
 
       <main className={styles.main}>
         {/* <ProductDetailComponent product={product} variations={variations} /> */}
-        <ProductVariationComponent product={product} />
+        <ProductVariationComponent />
       </main>
     </div>
   );

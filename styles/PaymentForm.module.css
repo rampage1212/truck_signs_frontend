@@ -20,10 +20,14 @@
 }
 
 .formControl{
-    border-color:#808285;
+    border:1px solid #999e9f99 !important;
     font-size:20px;
     border-radius: 0px;
     font-weight: 300 !important;
+}
+
+.formControl::placeholder{
+    color: black;
 }
 
 .formGroupLeftCol{
@@ -53,7 +57,7 @@
 .orderNowButton{
     background-color: #bf1e2d;
     color:white;
-    border-color: black;
+    border-color: #bf1e2d;
     border-radius: 0px;
     font-size: 18px;
 }
@@ -63,7 +67,7 @@
 .orderNowButton:after{
     background-color: crimson;
     color:white;
-    border-color: black;
+    border-color: crimson;
     border-radius: 0px;
     font-size: 18px;
 }
