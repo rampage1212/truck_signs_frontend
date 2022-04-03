@@ -18,8 +18,8 @@
 }
 
 .logoImage_div{
-  height: 200px !important;
-  width: 200px !important;
+  height: 250px !important;
+  width: 250px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center;
@@ -27,8 +27,8 @@
 }
 
 .logoImage {
-  height: 200px !important;
-  width: 200px !important;
+  height: 250px !important;
+  width: 250px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center;
@@ -77,12 +77,25 @@
     text-align: center;
   }
 
+  
+  .logoImage_div{
+    height: 250px !important;
+    width: 250px !important;
+  }
+
+  .logoImage {
+    height: 250px !important;
+    width: 250px !important;
+  }
+
   .orderLogoButton {
+    height: 50px !important;
     min-width: 100px;
     max-width: 250px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: auto !important;
     margin-right: auto !important;
+    padding-top: 10px;
     color: white;
     background-color: #bf1e2d;
     border-color: #bf1e2d;

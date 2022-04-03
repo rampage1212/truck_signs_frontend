@@ -17,16 +17,16 @@
   margin-top: 50px;
   margin-left: auto !important;
   margin-right: auto !important;
-  width: 500px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
 }
 
 .productImage {
-  border: 1px solid black;
+  border:1px solid #999e9f99 !important;
   height: 300px;
-  width: 500px;
+  width: 450px;
 }
 
 .crimsonSpanContainer {

@@ -48,7 +48,9 @@ const ProductVariationComponent = () => {
 
     useEffect(async () => {
         getColors(setColors);
-        setColor(product.product_color_default);
+        if(product!=null){
+            setColor(product.product_color_default);
+        }
         window.scrollTo(0, 0);
     }, [product]);
 
