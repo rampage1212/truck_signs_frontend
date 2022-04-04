@@ -252,6 +252,10 @@
     text-align: center;
   }
 
+  .uploadLogoHeader{
+    font-size: 2.0rem !important;
+  }
+
   .uploadButton {
     height: 50px !important;
     margin-bottom: 50px;

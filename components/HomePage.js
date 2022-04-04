@@ -96,7 +96,7 @@ const HomePage = () => {
               <Card.Header className={styles.cardHeader}>
                 Free Shipping Over $50
                 <Card.Title className={styles.cardTitle}>
-                  Most orders today will ship Tuesday, Feb 16th!
+                  Order today and get the free shipping
                 </Card.Title>
               </Card.Header>
               <Card.Body className={styles.cardBody}>
@@ -127,8 +127,7 @@ const HomePage = () => {
               </Card.Header>
               <Card.Body className={styles.cardBody}>
                 <p>
-                  Select USPS Priority or UPS/FedEx and your order will ship
-                  tomorrow.
+                  We send all orders by USP or FedEx next day production
                 </p>
               </Card.Body>
             </Card>

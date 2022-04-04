@@ -142,7 +142,7 @@ const ProductVariationComponent = () => {
                                                     className={styles.dropdownColorToggle}
                                                     drop="end"
                                                 >
-                                                    Color
+                                                    Truck Color
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu className={styles.dropdownMenu}>
                                                     {colors.map((col, index) => {
