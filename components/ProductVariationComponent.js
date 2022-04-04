@@ -48,11 +48,14 @@ const ProductVariationComponent = () => {
 
     useEffect(async () => {
         getColors(setColors);
-        if(product!=null){
-            setColor(product.product_color_default);
-        }
         window.scrollTo(0, 0);
     }, [product]);
+
+    useEffect(() => {
+        if(colors != null && colors.length > 0){
+            setColor(colors[0]);
+        }
+    }, [colors])
 
 
 
@@ -198,7 +201,8 @@ const ProductVariationComponent = () => {
                                     type="text"
                                     placeholder="MC Number"
                                     className={`mr-2 ${styles.categoryAddLettering}`}
-                                    onChange={(e) => setDummyVar(e.target.value)}
+                                    value={mc_number}
+                                    onChange={(e) => setMcNumber(e.target.value)}
                                 />
 
                             </InputGroup>
@@ -209,7 +213,8 @@ const ProductVariationComponent = () => {
                                     type="text"
                                     placeholder="Company Location"
                                     className={`mr-2 ${styles.categoryAddLettering}`}
-                                    onChange={(e) => setDummyVar(e.target.value)}
+                                    value={company_location}
+                                    onChange={(e) => setCompanyLocation(e.target.value)}
                                 />
 
                             </InputGroup>
@@ -220,7 +225,8 @@ const ProductVariationComponent = () => {
                                     type="text"
                                     placeholder="VIN Number"
                                     className={`mr-2 ${styles.categoryAddLettering}`}
-                                    onChange={(e) => setDummyVar(e.target.value)}
+                                    value={vim_number}
+                                    onChange={(e) => setVimNumber(e.target.value)}
                                 />
 
                             </InputGroup>
@@ -231,7 +237,8 @@ const ProductVariationComponent = () => {
                                     type="text"
                                     placeholder="Truck Number"
                                     className={`mr-2 ${styles.categoryAddLettering}`}
-                                    onChange={(e) => setDummyVar(e.target.value)}
+                                    value={truck_number}
+                                    onChange={(e) => setTruckNumber(e.target.value)}
                                 />
 
                             </InputGroup>

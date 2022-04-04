@@ -2,16 +2,26 @@
 
 ## Table of Contents
 
+1. [Brief Introduction and Basic Workflow of the Website](#frontend)
 1. [Quick Installation for testing using Docker](#docker)
-2. [Custom Installation](#installation)
-3. [Brief Introduction and Basic Workflow of the Website](#frontend)
-4. [Screenshots of the Frontend Next js App](#screenshots_frontend)
-5. [Screenshots of the Django Backend Admin Panel](#screenshots)
-6. [Screenshots of the Original Frontend Design](#screenshots_original)
+1. [Custom Installation](#installation)
+1. [Screenshots of the Frontend Next js App](#screenshots_frontend)
+1. [Screenshots of the Django Backend Admin Panel](#screenshots)
+1. [Screenshots of the Original Frontend Design](#screenshots_original)
 
+<a name="frontend"></a>
+### Brief Introduction
+__Signs for Trucks__ is an online store to buy pre-designed vinyls with custom lines of letters (often call truck letterings). The store also allows clients to upload their own designs and to customize them on the website as well. Aside from the vinyls that are the main product of the store, clients can also purchase simple lettering vinyls with no truck logo, a fire extinguisher vinyl, and/or a vinyl with only the truck unit number (or another number selected by the client).
+
+### Basic Workflow of the Website
+
+1. __Selecting a pre-designed vinyl or uploading one:__ In the principal view of the website the client can select one of the pre-designed vinyls available to edit, or the client can upload a png, jpg, ... photo to use as the template for the vinyl. After this the client is redirected to the edit-vinyl section.
+
+2. __Editing the selected/uploaded vinyl:__ In this page the client selects what lines of lettering should be added to the selected/uploaded vinyl as well as the color of the lettering (note that the background of the vinyl will be the color of the physical truck). The client can also leave a comment about more specific/custom instructions, and should always provide an email to contact or send a pre-view of the product. After this the client is redirected to the make-payment section.
+
+3. __Making a Payment:__ The payment is managed via [Stripe](https://stripe.com/). The client should provide the required information that will be processed in the backend (DJANGO API). Then, the vinyl is sent to production.
 
 <a name="docker"></a>
-
 ### Quick Installation for testing using Docker
 
 1. Clone the repo:
@@ -67,19 +77,7 @@
 1. Congratulations =) !!! the app should be running in [localhost:3000](http://localhost:3000)
 
 
-<a name="frontend"></a>
 
-#### Brief Introduction
-
-__Signs for Trucks__ is an online store to buy pre-designed vinyls with custom lines of letters (often call truck letterings). The store also allows clients to upload their own designs and customize them on the website as well.
-
-#### Basic Workflow of the Website
-
-1. __Selecting a pre-designed vinyl or uploading one:__ In the principal view of the website the client can select one of the pre-designed vinyls available to edit, or the client can upload a png, jpg, ... photo to use as the template for the vinyl. After this the client is redirected to the edit-vinyl section.
-
-2. __Editing the selected/uploaded vinyl:__ In this page the client selects what lines of lettering should be added to the selected/uploaded vinyl as well as the color of the lettering (note that the background of the vinyl will be the color of the physical truck). The client can also leave a comment about more specific/custom instructions, and should always provide an email to contact or send a pre-view of the product. After this the client is redirected to the make-payment section.
-
-3. __Making a Payment:__ The payment is managed via [Stripe](https://stripe.com/). The client should provide the required information that will be processed in the backend (DJANGO API). Then, the vinyl is sent to production.
 
 
 <a name="screenshots_frontend"></a>
