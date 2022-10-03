@@ -66,7 +66,7 @@ __Signs for Trucks__ is an online store to buy pre-designed vinyls with custom l
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/Ceci-Aguilera/truck_signs_frontend.git
+   git clone https://github.com/rampage0131/truck_signs_frontend.git
    ```
 
 1. Install dependencies:
@@ -101,9 +101,9 @@ __Note:__ Before following these steps clone this repository. From now on the se
       └── truck_signs_frontend
    ```
 
-1. Assuming that your are at the __project_root__, clone the [Django Backend API repository](https://github.com/Ceci-Aguilera/truck_signs_api):
+1. Assuming that your are at the __project_root__, clone the [Django Backend API repository](https://github.com/rampage0131/truck_signs_api):
    ```sh
-      git clone https://github.com/Ceci-Aguilera/truck_signs_api.git
+      git clone https://github.com/rampage0131/truck_signs_api.git
    ```
    Now the __project_root__ folder should look like:
       ```sh
@@ -113,8 +113,8 @@ __Note:__ Before following these steps clone this repository. From now on the se
    ```
 
 - ### If Using Docker and Docker Compose
-   1. Copy the content of the docker-compose-connect.yml to a new file docker-compose.yml in the __project_root__. The docker-compose-connect.yml file can be found at the root of this repository and also at the root of the [Django Backend API repository](https://github.com/Ceci-Aguilera/truck_signs_api) (Either file is fine to copy).
-   1. Follow the instruction to configure the environment variables of the __Django__ backend API that can be found in the section __Install (Run) with Docker__ in the Readme.md of the [Django Backend API repository](https://github.com/Ceci-Aguilera/truck_signs_api)
+   1. Copy the content of the docker-compose-connect.yml to a new file docker-compose.yml in the __project_root__. The docker-compose-connect.yml file can be found at the root of this repository and also at the root of the [Django Backend API repository](https://github.com/rampage0131/truck_signs_api) (Either file is fine to copy).
+   1. Follow the instruction to configure the environment variables of the __Django__ backend API that can be found in the section __Install (Run) with Docker__ in the Readme.md of the [Django Backend API repository](https://github.com/rampage0131/truck_signs_api)
    1. Follow the instructions on the __Install (Run) with Docker__ section of this Readme.md to configure the environment variables for this repo. The only env variable needed is the Flask Backend url, which by default should be [http://localhost:80](http://localhost:80).
    __Note:__ Right now the __project_root__ should look like:
          ```sh
@@ -141,7 +141,7 @@ __NOTE:__ To create Truck vinyls with Truck logos in them, first create the __Ca
 
 
 - ### Running without Docker and Docker Compose
-   1. Follow the instructions of the __Installation without Docker__ section in the Readme.md of the [Django Backend API repository](https://github.com/Ceci-Aguilera/truck_signs_api) to configure and run the backend.
+   1. Follow the instructions of the __Installation without Docker__ section in the Readme.md of the [Django Backend API repository](https://github.com/rampage0131/truck_signs_api) to configure and run the backend.
    1. Follow the instructions of section __Installation without Docker__ of this Readme.md. Modify the NEXT_PUBLIC_API_DOMAIN_NAME to be the url of the __Django__ Backend API (by default it is [http://localhost:8000](http://localhost:8000)).
    1. Congratulations =) !!! the frontend app should be running in [localhost:3000](http://localhost:3000) while the backend is at [localhost:8000](http://localhost:8000)
 
